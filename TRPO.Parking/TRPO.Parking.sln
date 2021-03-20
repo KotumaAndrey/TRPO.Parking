@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Repositories",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Logic", "TRPO.Parking.Logic\TRPO.Parking.Logic.csproj", "{AEE747F8-821E-4F8D-AF4F-5ABB5B709433}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{BF162355-F6E7-47C7-8A16-F6D303DC6FA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Entities", "TRPO.Parking.Entities\TRPO.Parking.Entities.csproj", "{88AD5565-5219-4640-81E3-9DCB73BF07CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,10 @@ Global
 		{AEE747F8-821E-4F8D-AF4F-5ABB5B709433}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEE747F8-821E-4F8D-AF4F-5ABB5B709433}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEE747F8-821E-4F8D-AF4F-5ABB5B709433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88AD5565-5219-4640-81E3-9DCB73BF07CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88AD5565-5219-4640-81E3-9DCB73BF07CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88AD5565-5219-4640-81E3-9DCB73BF07CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88AD5565-5219-4640-81E3-9DCB73BF07CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +65,7 @@ Global
 		{03FBA92D-1D23-481E-96F6-57597CE6259C} = {8F58814D-904D-4F1D-BE2D-E9BEF11274C0}
 		{570B696B-75AB-4613-B11D-93BF5317996A} = {FDE43108-5AE9-47BD-9EF4-9AB129AC5239}
 		{AEE747F8-821E-4F8D-AF4F-5ABB5B709433} = {60872320-AB6C-454C-ABAA-56D0D88D22B8}
+		{88AD5565-5219-4640-81E3-9DCB73BF07CC} = {BF162355-F6E7-47C7-8A16-F6D303DC6FA5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C86C272D-7895-48E9-B5CC-C77932E2D616}
