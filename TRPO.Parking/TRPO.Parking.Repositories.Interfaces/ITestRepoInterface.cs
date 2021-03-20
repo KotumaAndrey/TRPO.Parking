@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TRPO.Parking.Logic.Implementations
+namespace TRPO.Parking.Repositories.Interfaces
 {
-    internal interface ITestInterface
+    public interface ITestRepoInterface
     {
+        string GetTestValue();
     }
 }

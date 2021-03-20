@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TRPO.Parking.Logic.Implementations;
+using TRPO.Parking.Entities;
 
 namespace TRPO.Parking.Logic.Interfaces
 {
-    internal class TestClass : ITestInterface
+    public interface ITestLogicInterface
     {
+        TestEntity GetTestValue();
     }
 }

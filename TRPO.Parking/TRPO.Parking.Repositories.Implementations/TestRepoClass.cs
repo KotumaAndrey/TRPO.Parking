@@ -7,7 +7,11 @@ using TRPO.Parking.Repositories.Interfaces;
 
 namespace TRPO.Parking.Repositories.Implementations
 {
-    internal class TestClass : ITestInterface
+    internal class TestRepoClass : ITestRepoInterface
     {
+        public string GetTestValue()
+        {
+            return "Test value";
+        }
     }
 }
