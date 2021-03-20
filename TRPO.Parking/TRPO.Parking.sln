@@ -20,6 +20,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Entities", "TRPO.Parking.Entities\TRPO.Parking.Entities.csproj", "{88AD5565-5219-4640-81E3-9DCB73BF07CC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Dependencies", "TRPO.Parking.Dependencies\TRPO.Parking.Dependencies.csproj", "{34A9EE7A-FA3F-4DF8-A7C0-625C85439CCA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{BF162355-F6E7-47C7-8A16-F6D303DC6FA5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Logic.Interfaces", "TRPO.Parking.Logic.Interfaces\TRPO.Parking.Logic.Interfaces.csproj", "{B7DFA674-ACD5-434D-B730-4EACAB1EEA90}"
 EndProject
@@ -28,6 +29,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Repositories.Interfaces", "TRPO.Parking.Repositories.Interfaces\TRPO.Parking.Repositories.Interfaces.csproj", "{420CF4CD-1745-4BB3-9479-9E93798DCA15}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Repositories.Implementations", "TRPO.Parking.Repositories.Implementations\TRPO.Parking.Repositories.Implementations.csproj", "{561CE7DE-06C5-43AE-9BE5-1C459F16B895}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Dependencies", "TRPO.Parking.Dependencies\TRPO.Parking.Dependencies.csproj", "{34A9EE7A-FA3F-4DF8-A7C0-625C85439CCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
