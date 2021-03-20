@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace TRPO.Parking.Entities
 {
-    public class TestClass
+    public class TestEntity
     {
+        public string String { get; set; }
+        public int Length { get; set; }
     }
 }

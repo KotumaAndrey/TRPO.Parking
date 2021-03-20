@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6A1A4E15-6878-4A2F-859C-1F8ECF910D12}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>TRPO.Parking.ConsoleApp</RootNamespace>
-    <AssemblyName>TRPO.Parking.ConsoleApp</AssemblyName>
+    <ProjectGuid>{561CE7DE-06C5-43AE-9BE5-1C459F16B895}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TRPO.Parking.Repositories.Implementations</RootNamespace>
+    <AssemblyName>TRPO.Parking.Repositories.Implementations</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -68,26 +66,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="DependencyResolverExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestRepoClass.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TRPO.Parking.Dependencies\TRPO.Parking.Dependencies.csproj">
-      <Project>{34a9ee7a-fa3f-4df8-a7c0-625c85439cca}</Project>
-      <Name>TRPO.Parking.Dependencies</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TRPO.Parking.Entities\TRPO.Parking.Entities.csproj">
       <Project>{88ad5565-5219-4640-81e3-9dcb73bf07cc}</Project>
       <Name>TRPO.Parking.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TRPO.Parking.Logic.Interfaces\TRPO.Parking.Logic.Interfaces.csproj">
-      <Project>{b7dfa674-acd5-434d-b730-4eacab1eea90}</Project>
-      <Name>TRPO.Parking.Logic.Interfaces</Name>
+    <ProjectReference Include="..\TRPO.Parking.Repositories.Interfaces\TRPO.Parking.Repositories.Interfaces.csproj">
+      <Project>{420cf4cd-1745-4bb3-9479-9e93798dca15}</Project>
+      <Name>TRPO.Parking.Repositories.Interfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

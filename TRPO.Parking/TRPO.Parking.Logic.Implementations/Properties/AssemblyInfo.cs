@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные со сборкой.
-[assembly: AssemblyTitle("TRPO.Parking.Logic")]
+[assembly: AssemblyTitle("TRPO.Parking.Logic.Implementations")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EPAM Systems")]
-[assembly: AssemblyProduct("TRPO.Parking.Logic")]
+[assembly: AssemblyProduct("TRPO.Parking.Logic.Implementations")]
 [assembly: AssemblyCopyright("Copyright © EPAM Systems 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("aee747f8-821e-4f8d-af4f-5abb5b709433")]
+[assembly: Guid("b974dece-3e69-428d-aad8-6e19f37d26ee")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

@@ -1,13 +1,10 @@
 ﻿using Autofac;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TRPO.Parking.Logic.Implementations;
+using TRPO.Parking.Repositories.Implementations;
 
 namespace TRPO.Parking.Dependencies
 {
-    public class DependencyResolver
+    public static class DependencyResolver
     {
         public static IContainer Container { get; private set; }
 
@@ -15,7 +12,8 @@ namespace TRPO.Parking.Dependencies
         {
             var builder = new ContainerBuilder();
 
-            // smth
+            builder.RegisterRepositories();
+            builder.RegisterLogics();
 
             Container = builder.Build();
         }
