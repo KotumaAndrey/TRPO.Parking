@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TRPO.Parking.Repositories.Interfaces
 {
-    public interface ITestInterface
+    internal interface ITestInterface
     {
     }
 }

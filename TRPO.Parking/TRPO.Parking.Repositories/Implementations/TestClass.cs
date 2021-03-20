@@ -7,7 +7,7 @@ using TRPO.Parking.Repositories.Interfaces;
 
 namespace TRPO.Parking.Repositories.Implementations
 {
-    public class TestClass : ITestInterface
+    internal class TestClass : ITestInterface
     {
     }
 }
