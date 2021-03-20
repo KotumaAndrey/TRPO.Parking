@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PL", "PL", "{8F58814D-904D-4F1D-BE2D-E9BEF11274C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{FDE43108-5AE9-47BD-9EF4-9AB129AC5239}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{60872320-AB6C-454C-ABAA-56D0D88D22B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.ConsoleApp", "TRPO.Parking.ConsoleApp\TRPO.Parking.ConsoleApp.csproj", "{6A1A4E15-6878-4A2F-859C-1F8ECF910D12}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TRPO.Parking.MobileApp", "TRPO.Parking.MobileApp\TRPO.Parking.MobileApp\TRPO.Parking.MobileApp.csproj", "{7ED2178C-3400-432C-BDCF-EC145331CA25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.MobileApp.Android", "TRPO.Parking.MobileApp\TRPO.Parking.MobileApp.Android\TRPO.Parking.MobileApp.Android.csproj", "{03FBA92D-1D23-481E-96F6-57597CE6259C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{BF162355-F6E7-47C7-8A16-F6D303DC6FA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Entities", "TRPO.Parking.Entities\TRPO.Parking.Entities.csproj", "{88AD5565-5219-4640-81E3-9DCB73BF07CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Dependencies", "TRPO.Parking.Dependencies\TRPO.Parking.Dependencies.csproj", "{34A9EE7A-FA3F-4DF8-A7C0-625C85439CCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Logic.Interfaces", "TRPO.Parking.Logic.Interfaces\TRPO.Parking.Logic.Interfaces.csproj", "{B7DFA674-ACD5-434D-B730-4EACAB1EEA90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Logic.Implementations", "TRPO.Parking.Logic.Implementations\TRPO.Parking.Logic.Implementations.csproj", "{B974DECE-3E69-428D-AAD8-6E19F37D26EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Repositories.Interfaces", "TRPO.Parking.Repositories.Interfaces\TRPO.Parking.Repositories.Interfaces.csproj", "{420CF4CD-1745-4BB3-9479-9E93798DCA15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Repositories.Implementations", "TRPO.Parking.Repositories.Implementations\TRPO.Parking.Repositories.Implementations.csproj", "{561CE7DE-06C5-43AE-9BE5-1C459F16B895}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A1A4E15-6878-4A2F-859C-1F8ECF910D12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A1A4E15-6878-4A2F-859C-1F8ECF910D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A1A4E15-6878-4A2F-859C-1F8ECF910D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A1A4E15-6878-4A2F-859C-1F8ECF910D12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ED2178C-3400-432C-BDCF-EC145331CA25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ED2178C-3400-432C-BDCF-EC145331CA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ED2178C-3400-432C-BDCF-EC145331CA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ED2178C-3400-432C-BDCF-EC145331CA25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03FBA92D-1D23-481E-96F6-57597CE6259C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03FBA92D-1D23-481E-96F6-57597CE6259C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03FBA92D-1D23-481E-96F6-57597CE6259C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{03FBA92D-1D23-481E-96F6-57597CE6259C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03FBA92D-1D23-481E-96F6-57597CE6259C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03FBA92D-1D23-481E-96F6-57597CE6259C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{88AD5565-5219-4640-81E3-9DCB73BF07CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88AD5565-5219-4640-81E3-9DCB73BF07CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88AD5565-5219-4640-81E3-9DCB73BF07CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88AD5565-5219-4640-81E3-9DCB73BF07CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34A9EE7A-FA3F-4DF8-A7C0-625C85439CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34A9EE7A-FA3F-4DF8-A7C0-625C85439CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34A9EE7A-FA3F-4DF8-A7C0-625C85439CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34A9EE7A-FA3F-4DF8-A7C0-625C85439CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7DFA674-ACD5-434D-B730-4EACAB1EEA90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7DFA674-ACD5-434D-B730-4EACAB1EEA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7DFA674-ACD5-434D-B730-4EACAB1EEA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7DFA674-ACD5-434D-B730-4EACAB1EEA90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B974DECE-3E69-428D-AAD8-6E19F37D26EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B974DECE-3E69-428D-AAD8-6E19F37D26EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B974DECE-3E69-428D-AAD8-6E19F37D26EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B974DECE-3E69-428D-AAD8-6E19F37D26EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{420CF4CD-1745-4BB3-9479-9E93798DCA15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{420CF4CD-1745-4BB3-9479-9E93798DCA15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{420CF4CD-1745-4BB3-9479-9E93798DCA15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{420CF4CD-1745-4BB3-9479-9E93798DCA15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{561CE7DE-06C5-43AE-9BE5-1C459F16B895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561CE7DE-06C5-43AE-9BE5-1C459F16B895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561CE7DE-06C5-43AE-9BE5-1C459F16B895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561CE7DE-06C5-43AE-9BE5-1C459F16B895}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6A1A4E15-6878-4A2F-859C-1F8ECF910D12} = {8F58814D-904D-4F1D-BE2D-E9BEF11274C0}
+		{7ED2178C-3400-432C-BDCF-EC145331CA25} = {8F58814D-904D-4F1D-BE2D-E9BEF11274C0}
+		{03FBA92D-1D23-481E-96F6-57597CE6259C} = {8F58814D-904D-4F1D-BE2D-E9BEF11274C0}
+		{88AD5565-5219-4640-81E3-9DCB73BF07CC} = {BF162355-F6E7-47C7-8A16-F6D303DC6FA5}
+		{34A9EE7A-FA3F-4DF8-A7C0-625C85439CCA} = {BF162355-F6E7-47C7-8A16-F6D303DC6FA5}
+		{B7DFA674-ACD5-434D-B730-4EACAB1EEA90} = {60872320-AB6C-454C-ABAA-56D0D88D22B8}
+		{B974DECE-3E69-428D-AAD8-6E19F37D26EE} = {60872320-AB6C-454C-ABAA-56D0D88D22B8}
+		{420CF4CD-1745-4BB3-9479-9E93798DCA15} = {FDE43108-5AE9-47BD-9EF4-9AB129AC5239}
+		{561CE7DE-06C5-43AE-9BE5-1C459F16B895} = {FDE43108-5AE9-47BD-9EF4-9AB129AC5239}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C86C272D-7895-48E9-B5CC-C77932E2D616}
+	EndGlobalSection
+EndGlobal
