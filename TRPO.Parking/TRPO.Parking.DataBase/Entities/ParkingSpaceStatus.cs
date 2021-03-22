@@ -1,9 +1,9 @@
 ﻿namespace TRPO.Parking.DataBase.Entities
 {
-    public enum ParkingSpaceStatus
+    public class ParkingSpaceStatus
     {
-        Free,
-        Rented,
-        Late,
+        public int Id { get; set; }
+
+        public string Title { get; set; }
     }
 }

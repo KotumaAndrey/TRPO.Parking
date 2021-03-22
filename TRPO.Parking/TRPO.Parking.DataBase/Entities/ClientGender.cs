@@ -1,8 +1,9 @@
 ﻿namespace TRPO.Parking.DataBase.Entities
 {
-    public enum ClientGender
+    public class ClientGender
     {
-        Female,
-        Male,
+        public int Id { get; set; }
+
+        public string Title { get; set; }
     }
 }

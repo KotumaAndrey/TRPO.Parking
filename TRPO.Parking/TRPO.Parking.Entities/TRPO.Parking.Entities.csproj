@@ -41,22 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accident.cs" />
-    <Compile Include="AccidentMember.cs" />
-    <Compile Include="ActiveRental.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="ClientGender.cs" />
-    <Compile Include="ClientType.cs" />
-    <Compile Include="ClosedRentals.cs" />
-    <Compile Include="Employee.cs" />
-    <Compile Include="EmployeeType.cs" />
-    <Compile Include="Floor.cs" />
-    <Compile Include="LatePayment.cs" />
-    <Compile Include="LatePaymentType.cs" />
-    <Compile Include="ParkingSpace.cs" />
-    <Compile Include="ParkingSpaceStatus.cs" />
-    <Compile Include="RentalRenewal.cs" />
-    <Compile Include="RentalRenewalType.cs" />
     <Compile Include="TestEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

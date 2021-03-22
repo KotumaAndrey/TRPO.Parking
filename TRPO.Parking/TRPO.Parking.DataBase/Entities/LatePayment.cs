@@ -8,7 +8,7 @@
 
         public int LatePaymentTypeId { get; set; }
 
-        public int ParkingSpace { get; set; }
+        public int ParkingSpaceId { get; set; }
 
         public int? RequestId { get; set; }
     }
