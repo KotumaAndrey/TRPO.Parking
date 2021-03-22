@@ -18,7 +18,7 @@ namespace TRPO.Parking.DataBase.Entities
 
         public int Experience { get; set; }
 
-        public int ClientType { get; set; }
+        public int ClientTypeId { get; set; }
 
         public DateTime LatePaymentTimeLeft { get; set; }
 
