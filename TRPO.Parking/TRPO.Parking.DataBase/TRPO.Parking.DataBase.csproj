@@ -41,6 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Accident.cs" />
+    <Compile Include="Entities\AccidentMember.cs" />
+    <Compile Include="Entities\ActiveRental.cs" />
+    <Compile Include="Entities\Client.cs" />
+    <Compile Include="Entities\ClientGender.cs" />
+    <Compile Include="Entities\ClientType.cs" />
+    <Compile Include="Entities\ClientTypes.cs" />
+    <Compile Include="Entities\ClosedRentals.cs" />
+    <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\EmployeeType.cs" />
+    <Compile Include="Entities\EmployeeTypes.cs" />
+    <Compile Include="Entities\Floor.cs" />
+    <Compile Include="Entities\LatePayment.cs" />
+    <Compile Include="Entities\LatePaymentType.cs" />
+    <Compile Include="Entities\ParkingSpace.cs" />
+    <Compile Include="Entities\ParkingSpaceStatus.cs" />
+    <Compile Include="Entities\ParkingSpaceStatuses.cs" />
+    <Compile Include="Entities\RentalRenewal.cs" />
+    <Compile Include="Entities\RentalRenewalType.cs" />
     <Compile Include="TestClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
