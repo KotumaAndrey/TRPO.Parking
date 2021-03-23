@@ -1,9 +1,8 @@
 ﻿namespace TRPO.Parking.DataBase.Entities
 {
-    public class EmployeeType
+    public class EmployeeTypeEntity
     {
-        public int Id { get; set; }
-
+        public Primitives.EmployeeType Id { get; set; }
         public string Title { get; set; }
     }
 }
