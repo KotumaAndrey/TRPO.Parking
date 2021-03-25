@@ -8,6 +8,8 @@ namespace TRPO.Parking.DataBase.Entities
         public string Name { get; set; }
         public DateTime EmployeementDate { get; set; }
         public int Salary { get; set; }
-        public Primitives.EmployeeType TypeId { get; set; }
+
+        public int TypeId { get; set; }
+        public Primitives.EmployeeType Type { get; set; }
     }
 }
