@@ -1,9 +1,8 @@
 ﻿namespace TRPO.Parking.DataBase.Entities
 {
-    public class ParkingSpaceStatus
+    public class GenderEntity
     {
-        public int Id { get; set; }
-
+        public Primitives.Gender Id { get; set; }
         public string Title { get; set; }
     }
 }

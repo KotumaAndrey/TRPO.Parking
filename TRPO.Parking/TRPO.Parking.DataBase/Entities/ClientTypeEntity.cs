@@ -1,11 +1,9 @@
 ﻿namespace TRPO.Parking.DataBase.Entities
 {
-    public class ClientType
+    public class ClientTypeEntity
     {
-        public int Id { get; set; }
-
+        public Primitives.ClientType Id { get; set; }
         public string Title { get; set; }
-
         public double PriceMultipler { get; set; }
     }
 }
