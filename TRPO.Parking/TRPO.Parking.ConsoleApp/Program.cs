@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Autofac;
 using TRPO.Parking.DataBase;
 using TRPO.Parking.Dependencies;
-//using Autofac;
+using TRPO.Parking.Logic.Interfaces;
 
 namespace TRPO.Parking.ConsoleApp
 {
@@ -13,7 +14,7 @@ namespace TRPO.Parking.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Test:");
+            //Console.WriteLine("Test:");
 
             //var logic = DependencyResolver.Container.Resolve<ITestLogicInterface>();
             //var entity = logic.GetTestValue();
@@ -24,7 +25,7 @@ namespace TRPO.Parking.ConsoleApp
             using (var db = new ParkingDbContext())
             {
                 var t = db.GenderEntities.Select(x => x);
-                foreach(var i in t)
+                foreach (var i in t)
                 {
                     Console.WriteLine(i.Id);
                 }
