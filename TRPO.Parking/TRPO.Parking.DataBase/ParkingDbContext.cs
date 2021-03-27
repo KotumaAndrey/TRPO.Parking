@@ -12,6 +12,5 @@ namespace TRPO.Parking.DataBase
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlite("Filename=Parking.db");
         }
-
     }
 }
