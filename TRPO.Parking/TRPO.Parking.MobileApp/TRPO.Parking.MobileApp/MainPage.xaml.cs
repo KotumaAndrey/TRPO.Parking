@@ -14,10 +14,5 @@ namespace TRPO.Parking.MobileApp
         {
             InitializeComponent();
         }
-
-        async void OnButtonClicked(object sender, EventArgs e)
-        {
-            await DisplayAlert("АСТАРОЖНА", "Вы включили телефон, а он не настоящий!1!", "Ок", "Не ок");
-        }
     }
 }

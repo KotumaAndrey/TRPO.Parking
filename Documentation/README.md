@@ -13,7 +13,7 @@
 
 ### DAL
 DB scheme:
-![Alt text](https://github.com/ShadowOfFallenLord/TRPO.Parking/tree/develop/Documentation/Images/db_scheme.png/ "DB scheme")
+![Open scheme](https://github.com/ShadowOfFallenLord/TRPO.Parking/tree/develop/Documentation/Images/db_scheme.png/ "DB scheme")
 
 ### BLL
 

@@ -13,6 +13,9 @@
         public int ParkingSpaceId { get; set; }
         public ParkingSpace ParkingSpace { get; set; }
 
+        public int? ActiveRentalId { get; set; }
+        public ActiveRental ActiveRental { get; set; }
+
         public int? ClosedRentalId { get; set; }
         public ClosedRental ClosedRental { get; set; }
     }

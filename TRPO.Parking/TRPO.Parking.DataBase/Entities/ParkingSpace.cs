@@ -11,6 +11,6 @@
         public int Colunm { get; set; }
 
         public int StatusId { get; set; }
-        public Primitives.ParkingSpaceStatus Status { get; set; }
+        public ParkingSpaceStatusEntity Status { get; set; }
     }
 }

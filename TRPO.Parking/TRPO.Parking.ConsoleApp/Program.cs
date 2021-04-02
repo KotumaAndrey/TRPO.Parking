@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
+using Microsoft.EntityFrameworkCore;
 using TRPO.Parking.DataBase;
 using TRPO.Parking.Dependencies;
 using TRPO.Parking.Logic.Interfaces;
@@ -24,12 +25,24 @@ namespace TRPO.Parking.ConsoleApp
 
             using (var db = new ParkingDbContext())
             {
-                var t = db.GenderEntities.Select(x => x);
-                foreach (var i in t)
+                db.Database.Migrate();
+
+                var g = db.GenderEntities.Select(x => x);
+
+                foreach(var i in g)
                 {
                     Console.WriteLine(i.Id);
                 }
             }
+
+            //using (var db = new ParkingDbContext())
+            //{
+            //    //var t = db.GenderEntities.Select(x => x);
+            //    //foreach (var i  in t)
+            //    //{
+            //    //    Console.WriteLine(i.Id);
+            //    //}
+            //}
 
             // --- --- ---
             Console.WriteLine("\nend");

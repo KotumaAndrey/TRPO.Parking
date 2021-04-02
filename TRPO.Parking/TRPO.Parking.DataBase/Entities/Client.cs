@@ -17,8 +17,8 @@ namespace TRPO.Parking.DataBase.Entities
         public string Email { get; set; }
         public int Experience { get; set; }
 
-        public int ClientTypeId { get; set; }
-        public Primitives.ClientType ClientType { get; set; }
+        public int ClientTypeEntityId { get; set; }
+        public ClientTypeEntity ClientTypeEntity { get; set; }
         
         public DateTime LatePaymentTimeLeft { get; set; }
         public double LatePaymentPriceMultiplier { get; set; }
