@@ -1,73 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FDDF7E46-8A39-472C-A5EF-150619EF9496}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TRPO.Parking.DataBase</RootNamespace>
-    <AssemblyName>TRPO.Parking.DataBase</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <Folder Include="Entities\" />
+    <Folder Include="Primitives\" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Entities\Accident.cs" />
-    <Compile Include="Entities\AccidentMember.cs" />
-    <Compile Include="Entities\ActiveRental.cs" />
-    <Compile Include="Entities\Administrator.cs" />
-    <Compile Include="Entities\Client.cs" />
-    <Compile Include="Entities\GenderEntity.cs" />
-    <Compile Include="Entities\ClientTypeEntity.cs" />
-    <Compile Include="Entities\ClientTypeUpdateRequest.cs" />
-    <Compile Include="Entities\ClientTypeUpdateRequestStatusEntity.cs" />
-    <Compile Include="Entities\ClosedRentalRenewal.cs" />
-    <Compile Include="Primitives\Gender.cs" />
-    <Compile Include="Primitives\ClientType.cs" />
-    <Compile Include="Entities\ClosedRentals.cs" />
-    <Compile Include="Entities\Employee.cs" />
-    <Compile Include="Entities\EmployeeTypeEntity.cs" />
-    <Compile Include="Primitives\ClientTypeUpdateRequestStatus.cs" />
-    <Compile Include="Primitives\EmployeeType.cs" />
-    <Compile Include="Entities\Floor.cs" />
-    <Compile Include="Entities\LatePayment.cs" />
-    <Compile Include="Entities\LatePaymentType.cs" />
-    <Compile Include="Entities\ParkingSpace.cs" />
-    <Compile Include="Entities\ParkingSpaceStatusEntity.cs" />
-    <Compile Include="Primitives\ParkingSpaceStatus.cs" />
-    <Compile Include="Entities\ActiveRentalRenewal.cs" />
-    <Compile Include="Entities\RentalRenewalType.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.4" />
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

@@ -8,6 +8,9 @@
 
 ### Common
 
+**Using technologies:**
+- EntityFramework 6.4.4
+
 ### DAL
 DB scheme:
 ![Alt text](https://github.com/ShadowOfFallenLord/TRPO.Parking/tree/develop/Documentation/Images/db_scheme.png/ "DB scheme")
