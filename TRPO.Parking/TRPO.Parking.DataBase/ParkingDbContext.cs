@@ -1,3 +1,4 @@
+using System;
 using Microsoft.EntityFrameworkCore;
 using TRPO.Parking.DataBase.Entities;
 
@@ -31,6 +32,9 @@ namespace TRPO.Parking.DataBase
         public ParkingDbContext()
         {
             Database.EnsureCreated();
+
+            GenderEntities.AddEnumValues<GenderEntity, Primitives.Gender>(value => new GenderEntity(value));
+            SaveChanges();
         }
 
         #region Entities

@@ -1,8 +1,9 @@
 ﻿namespace TRPO.Parking.DataBase.Entities
 {
-    public class GenderEntity
+    public class GenderEntity : BaseEnumEntity<Primitives.Gender>
     {
-        public Primitives.Gender Id { get; set; }
-        public string Title { get; set; }
+        public GenderEntity() : base() { }
+
+        public GenderEntity(Primitives.Gender value) : base(value) { }
     }
 }
