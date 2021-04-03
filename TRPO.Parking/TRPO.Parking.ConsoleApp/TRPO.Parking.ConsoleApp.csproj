@@ -21,4 +21,16 @@
     <ProjectReference Include="..\TRPO.Parking.Repositories.Interfaces\TRPO.Parking.Repositories.Interfaces.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Resource Include="Config\DB\ClientTypeValues.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Config\DB\ClientTypeValues.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

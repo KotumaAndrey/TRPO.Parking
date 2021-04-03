@@ -12,13 +12,13 @@ namespace TRPO.Parking.DataBase.Entities
 
         public DateTime OpenDate { get; set; }
 
-        public int OldClientTypeId { get; set; }
+        public Primitives.ClientType OldClientTypeId { get; set; }
         public virtual ClientTypeEntity OldClientType { get; set; }
 
-        public int NewClientTypeId { get; set; }
+        public Primitives.ClientType NewClientTypeId { get; set; }
         public virtual ClientTypeEntity NewClientType { get; set; }
 
-        public int StatusId { get; set; }
+        public Primitives.ClientTypeUpdateRequestStatus StatusId { get; set; }
         public virtual ClientTypeUpdateRequestStatusEntity Status { get; set; }
         
         public int? AdministratorId { get; set; }

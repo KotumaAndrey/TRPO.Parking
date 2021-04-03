@@ -12,7 +12,7 @@ namespace TRPO.Parking.DataBase.Entities
         public int Row { get; set; }
         public int Colunm { get; set; }
 
-        public int StatusId { get; set; }
+        public Primitives.ParkingSpaceStatus StatusId { get; set; }
         public virtual ParkingSpaceStatusEntity Status { get; set; }
     }
 }
