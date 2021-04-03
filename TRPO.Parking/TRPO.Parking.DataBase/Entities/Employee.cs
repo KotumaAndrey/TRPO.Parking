@@ -1,4 +1,5 @@
 ﻿using System;
+using TRPO.Parking.DataBase.EnumEntities;
 
 namespace TRPO.Parking.DataBase.Entities
 {
@@ -10,6 +11,6 @@ namespace TRPO.Parking.DataBase.Entities
         public int Salary { get; set; }
 
         public int TypeId { get; set; }
-        public EmployeeTypeEntity Type { get; set; }
+        public virtual EmployeeTypeEntity Type { get; set; }
     }
 }

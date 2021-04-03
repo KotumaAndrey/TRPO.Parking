@@ -1,6 +1,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using TRPO.Parking.DataBase.Entities;
+using TRPO.Parking.DataBase.EnumEntities;
 
 namespace TRPO.Parking.DataBase
 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using TRPO.Parking.DataBase.EnumEntities;
 
 namespace TRPO.Parking.DataBase.Entities
 {
@@ -11,14 +12,14 @@ namespace TRPO.Parking.DataBase.Entities
         public int Age { get; set; }
         
         public int GenderEntityId { get; set; }
-        public GenderEntity GenderEntity { get; set; }
+        public virtual GenderEntity GenderEntity { get; set; }
         
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public int Experience { get; set; }
 
         public int ClientTypeEntityId { get; set; }
-        public ClientTypeEntity ClientTypeEntity { get; set; }
+        public virtual ClientTypeEntity ClientTypeEntity { get; set; }
         
         public DateTime LatePaymentTimeLeft { get; set; }
         public double LatePaymentPriceMultiplier { get; set; }

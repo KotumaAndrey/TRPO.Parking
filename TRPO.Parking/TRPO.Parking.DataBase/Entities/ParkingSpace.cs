@@ -1,4 +1,6 @@
-﻿namespace TRPO.Parking.DataBase.Entities
+﻿using TRPO.Parking.DataBase.EnumEntities;
+
+namespace TRPO.Parking.DataBase.Entities
 {
     public class ParkingSpace
     {
@@ -11,6 +13,6 @@
         public int Colunm { get; set; }
 
         public int StatusId { get; set; }
-        public ParkingSpaceStatusEntity Status { get; set; }
+        public virtual ParkingSpaceStatusEntity Status { get; set; }
     }
 }

@@ -3,9 +3,9 @@
     public class AccidentMember
     {
         public int AccidentId { get; set; }
-        public Accident Accident { get; set; }
+        public virtual Accident Accident { get; set; }
         
         public int ClientId { get; set; }
-        public Client Client { get; set; }
+        public virtual Client Client { get; set; }
     }
 }

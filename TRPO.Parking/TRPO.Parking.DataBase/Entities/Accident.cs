@@ -8,7 +8,7 @@ namespace TRPO.Parking.DataBase.Entities
         public DateTime AccidentDate { get; set; }
 
         public int CulpritClientId { get; set; }
-        public Client CulpritClient { get; set; }
+        public virtual Client CulpritClient { get; set; }
 
         public string Comment { get; set; }
     }
