@@ -7,35 +7,10 @@ namespace TRPO.Parking.DataBase
 {
     public class ParkingDbContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Filename=Parking.db");
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<GenderEntity>()
-                .ToTable("GenderEntity");
-
-            modelBuilder.Entity<GenderEntity>()
-                .HasKey(e => e.Id);
-
-            modelBuilder.Entity<ClientTypeEntity>()
-                .HasKey(e => e.Id);
-
-            modelBuilder.Entity<AccidentMember>().HasKey(k => new { k.AccidentId, k.ClientId });
-            modelBuilder.Entity<ActiveRentalParkingSpaces>().HasKey(k => new { k.ActiveRentalId, k.ParkingSpaceId });
-            modelBuilder.Entity<ClosedRentalParkingSpaces>().HasKey(k => new { k.ClosedRentalId, k.ParkingSpaceId });
-
-            base.OnModelCreating(modelBuilder);
-        }
-
         public ParkingDbContext()
         {
             Database.EnsureCreated();
-
-            GenderEntities.AddEnumValues<GenderEntity, Primitives.Gender>(value => new GenderEntity(value));
-            SaveChanges();
+            InitEnumTables();
         }
 
         #region Entities
@@ -71,5 +46,49 @@ namespace TRPO.Parking.DataBase
         public DbSet<AccidentMember> AccidentMembers { get; set; }
 
         #endregion
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Filename=Parking.db");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<GenderEntity>()
+                .ToTable("GenderEntity");
+
+            modelBuilder.Entity<GenderEntity>()
+                .HasKey(e => e.Id);
+
+            modelBuilder.Entity<ClientTypeEntity>()
+                .HasKey(e => e.Id);
+
+            modelBuilder.Entity<AccidentMember>()
+                .HasKey(k => new { k.AccidentId, k.ClientId });
+
+            modelBuilder.Entity<ActiveRentalParkingSpaces>()
+                .HasKey(k => new { k.ActiveRentalId, k.ParkingSpaceId });
+
+            modelBuilder.Entity<ClosedRentalParkingSpaces>()
+                .HasKey(k => new { k.ClosedRentalId, k.ParkingSpaceId });
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+        private void InitEnumTables()
+        {
+            // TODO: Убрать заглушку priceMultipler
+            ClientTypeEntities.AddEnumValues<ClientTypeEntity, Primitives.ClientType>(value => new ClientTypeEntity(value));
+
+            ClientTypeUpdateRequestStatusEntities.AddEnumValues<ClientTypeUpdateRequestStatusEntity, Primitives.ClientTypeUpdateRequestStatus>(value => new ClientTypeUpdateRequestStatusEntity(value));
+
+            EmployeeTypeEntities.AddEnumValues<EmployeeTypeEntity, Primitives.EmployeeType>(value => new EmployeeTypeEntity(value));
+
+            GenderEntities.AddEnumValues<GenderEntity, Primitives.Gender>(value => new GenderEntity(value));
+
+            ParkingSpaceStatusEntities.AddEnumValues<ParkingSpaceStatusEntity, Primitives.ParkingSpaceStatus>(value => new ParkingSpaceStatusEntity(value));
+
+            SaveChanges();
+        }
     }
 }
