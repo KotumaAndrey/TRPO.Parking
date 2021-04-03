@@ -7,7 +7,7 @@ namespace TRPO.Parking.DataBase.Entities
         public int Id { get; set; }
 
         public int FloorId { get; set; }
-        public Floor Floor { get; set; }
+        public virtual Floor Floor { get; set; }
 
         public int Row { get; set; }
         public int Colunm { get; set; }

@@ -6,7 +6,8 @@ namespace TRPO.Parking.DataBase.EnumEntities
     {
         public ClientTypeEntity() : base() { }
 
-        public ClientTypeEntity(ClientType value, double priceMultipler) : base(value)
+        // TODO: Убрать заглушку priceMultipler
+        public ClientTypeEntity(ClientType value, double priceMultipler = 1) : base(value)
         {
             PriceMultipler = priceMultipler;
         }
