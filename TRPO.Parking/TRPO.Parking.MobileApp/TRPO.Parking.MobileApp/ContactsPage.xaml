@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TRPO.Parking.MobileApp.ContactsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="ContacsLabel" FontSize="Large" Text="Нашыыыы Контакты"/>
+            <Label x:Name="AdressLabel" FontSize="Large" Text="улица пушкина дом колотушкина выезжаю, проверяй"/>
+            <Label x:Name="PhoneNumberLabel" FontSize="Large" Text="Контакный номер - 8901234567890"/>
+            <Button x:Name="BackBtn" FontSize="Large" Text="Назад" Clicked="BackBtn_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

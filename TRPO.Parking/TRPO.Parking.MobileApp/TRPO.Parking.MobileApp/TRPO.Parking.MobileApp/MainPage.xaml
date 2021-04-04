@@ -13,5 +13,5 @@
         <Button x:Name="RegistrationBtn" FontSize="Large" Text="Регистрация" Clicked="RegistrationBtn_Clicked"/>
         <Button x:Name="ContactsBtn" FontSize="Large" Text="Контакты" Clicked="ContactsBtn_Clicked"/>
     </StackLayout>
-
+    
 </ContentPage>

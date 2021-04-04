@@ -41,16 +41,16 @@ namespace TRPO.Parking.MobileApp
         }
         private void EnterBtn_Clicked(object sender, System.EventArgs e)
         {
+
         }
         private async void RegistrationBtn_Clicked(object sender, System.EventArgs e)
         {
             // Page appearance not animated
             await Navigation.PushModalAsync(new RegistrationPage(), false);
         }
-        private async void ContactsBtn_Clicked(object sender, System.EventArgs e)
+        private void ContactsBtn_Clicked(object sender, System.EventArgs e)
         {
-            // Page appearance not animated
-            await Navigation.PushModalAsync(new ContactsPage(), false);
+
         }
 
     }
