@@ -13,27 +13,6 @@ namespace TRPO.Parking.MobileApp
         public MainPage()
         {
             InitializeComponent();
-            StackLayout stackLayout = new StackLayout();
-
-            loginEntry = new Entry { Placeholder = "Login" };
-            loginEntry.TextChanged += loginEntry_TextChanged;
-
-            passwordEntry = new Entry
-            {
-                Placeholder = "Password",
-                IsPassword = true
-            };
-            textLabel = new Label { FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)) };
-            stackLayout.Children.Add(Title);
-            stackLayout.Children.Add(loginEntry);
-            stackLayout.Children.Add(passwordEntry);
-            stackLayout.Children.Add(textLabel);
-            stackLayout.Children.Add(EnterBtn);
-            stackLayout.Children.Add(RegistrationBtn);
-            stackLayout.Children.Add(ContactsBtn);
-
-
-            this.Content = stackLayout;
         }
         private void loginEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -45,12 +24,12 @@ namespace TRPO.Parking.MobileApp
         private async void RegistrationBtn_Clicked(object sender, System.EventArgs e)
         {
             // Page appearance not animated
-            await Navigation.PushModalAsync(new RegistrationPage(), false);
+            await Navigation.PushModalAsync(new RegistrationPage(), true);
         }
         private async void ContactsBtn_Clicked(object sender, System.EventArgs e)
         {
             // Page appearance not animated
-            await Navigation.PushModalAsync(new ContactsPage(), false);
+            await Navigation.PushModalAsync(new ContactsPage(), true);
         }
 
     }

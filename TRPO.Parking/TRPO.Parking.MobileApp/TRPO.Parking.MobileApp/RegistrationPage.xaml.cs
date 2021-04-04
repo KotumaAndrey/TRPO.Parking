@@ -35,7 +35,7 @@ namespace TRPO.Parking.MobileApp
         private async void BackBtn_Clicked(object sender, System.EventArgs e)
         {
             // Page appearance not animated
-            await Navigation.PushModalAsync(new MainPage(), false);
+            await Navigation.PopModalAsync();
         }
     }
 }
