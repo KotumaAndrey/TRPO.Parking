@@ -8,6 +8,7 @@ namespace TRPO.Parking.Entities
 {
     public class TestEntity
     {
+        public IEnumerable<string> Strings { get; set; }
         public string String { get; set; }
         public int Length { get; set; }
     }
