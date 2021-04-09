@@ -1,11 +1,34 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using TRPO.Parking.DataBase.Entities;
+using TRPO.Parking.DataBase.EnumEntities;
+using TRPO.Parking.DataBase.Primitives;
 
 namespace TRPO.Parking.DataBase
 {
     public class ParkingDbContext : DbContext
     {
+        #region Init
+        public void InitEnumTables()
+        {
+            ClientTypeEntities.AddEnumValues<ClientTypeEntity, ClientType>(value =>
+            {
+                var priceMultipler = value.GetPriceMultipler();
+                var entity = new ClientTypeEntity(value, priceMultipler);
+                return entity;
+            });
+
+            ClientTypeUpdateRequestStatusEntities.AddEnumValues<ClientTypeUpdateRequestStatusEntity, ClientTypeUpdateRequestStatus>(value => new ClientTypeUpdateRequestStatusEntity(value));
+
+            EmployeeTypeEntities.AddEnumValues<EmployeeTypeEntity, EmployeeType>(value => new EmployeeTypeEntity(value));
+
+            GenderEntities.AddEnumValues<GenderEntity, Gender>(value => new GenderEntity(value));
+
+            ParkingSpaceStatusEntities.AddEnumValues<ParkingSpaceStatusEntity, ParkingSpaceStatus>(value => new ParkingSpaceStatusEntity(value));
+
+            SaveChanges();
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Filename=Parking.db");
@@ -13,28 +36,46 @@ namespace TRPO.Parking.DataBase
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<GenderEntity>()
-                .ToTable("GenderEntity");
-
-            modelBuilder.Entity<GenderEntity>()
-                .HasKey(e => e.Id);
-
             modelBuilder.Entity<ClientTypeEntity>()
+                .ToTable("ClientTypes")
                 .HasKey(e => e.Id);
 
-            modelBuilder.Entity<AccidentMember>().HasKey(k => new { k.AccidentId, k.ClientId });
-            modelBuilder.Entity<ActiveRentalParkingSpaces>().HasKey(k => new { k.ActiveRentalId, k.ParkingSpaceId });
-            modelBuilder.Entity<ClosedRentalParkingSpaces>().HasKey(k => new { k.ClosedRentalId, k.ParkingSpaceId });
+            modelBuilder.Entity<ClientTypeUpdateRequestStatusEntity>()
+                .ToTable("ClientTypeUpdateRequestStatuses")
+                .HasKey(e => e.Id);
+
+            modelBuilder.Entity<EmployeeTypeEntity>()
+                .ToTable("EmployeeTypes")
+                .HasKey(e => e.Id);
+
+            modelBuilder.Entity<GenderEntity>()
+                .ToTable("Genders")
+                .HasKey(e => e.Id);
+
+            modelBuilder.Entity<ParkingSpaceStatusEntity>()
+                .ToTable("ParkingSpaceStatuses")
+                .HasKey(e => e.Id);
+
+            modelBuilder.Entity<AccidentMember>()
+                .HasKey(k => new { k.AccidentId, k.ClientId });
+
+            modelBuilder.Entity<ActiveRentalParkingSpaces>()
+                .HasKey(k => new { k.ActiveRentalId, k.ParkingSpaceId });
+
+            modelBuilder.Entity<ClosedRentalParkingSpaces>()
+                .HasKey(k => new { k.ClosedRentalId, k.ParkingSpaceId });
 
             base.OnModelCreating(modelBuilder);
         }
+        #endregion
 
         public ParkingDbContext()
         {
-            Database.EnsureCreated();
-
-            GenderEntities.AddEnumValues<GenderEntity, Primitives.Gender>(value => new GenderEntity(value));
-            SaveChanges();
+            var created = Database.EnsureCreated();
+            //if(created)
+            //{
+            InitEnumTables();
+            //}
         }
 
         #region Entities

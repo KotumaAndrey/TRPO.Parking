@@ -1,0 +1,7 @@
+<ClientTypeConfig>
+	<ClientType Name="Standart" PriceMultipler="1" />
+	<ClientType Name="Regular" PriceMultipler="2" />
+	<ClientType Name="White" PriceMultipler="3" />
+	<ClientType Name="Gray" PriceMultipler="4" />
+	<ClientType Name="Black" PriceMultipler="5" />
+</ClientTypeConfig>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TRPO.Parking.DataBase.Entities
+namespace TRPO.Parking.DataBase.EnumEntities
 {
     public class BaseEnumEntity<T> where T : Enum
     {

@@ -3,9 +3,9 @@
     public class ClosedRentalParkingSpaces
     {
         public int ClosedRentalId { get; set; }
-        public ClosedRental ClosedRental { get; set; }
+        public virtual ClosedRental ClosedRental { get; set; }
 
         public int ParkingSpaceId { get; set; }
-        public ParkingSpace ParkingSpace { get; set; }
+        public virtual ParkingSpace ParkingSpace { get; set; }
     }
 }
