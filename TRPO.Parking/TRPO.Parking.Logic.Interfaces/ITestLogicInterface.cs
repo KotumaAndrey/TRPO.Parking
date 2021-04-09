@@ -9,6 +9,6 @@ namespace TRPO.Parking.Logic.Interfaces
 {
     public interface ITestLogicInterface
     {
-        TestEntity GetTestValue();
+        Task<TestEntity> GetTestValue();
     }
 }

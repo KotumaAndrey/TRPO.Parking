@@ -8,6 +8,7 @@ namespace TRPO.Parking.Repositories.Interfaces
 {
     public interface ITestRepoInterface
     {
-        string GetTestValue();
+        Task<string> GetTestValue();
+        Task<IEnumerable<string>> GetGenders();
     }
 }

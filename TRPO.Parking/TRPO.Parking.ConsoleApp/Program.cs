@@ -15,25 +15,29 @@ namespace TRPO.Parking.ConsoleApp
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Test:");
+            Console.WriteLine("Test:");
 
-            //var logic = DependencyResolver.Container.Resolve<ITestLogicInterface>();
-            //var entity = logic.GetTestValue();
+            var logic = DependencyResolver.Container.Resolve<ITestLogicInterface>();
+            var entity = logic.GetTestValue().Result;
 
-            //Console.WriteLine($"String: {entity.String}");
-            //Console.WriteLine($"Length: {entity.Length}");
-
-            using (var db = new ParkingDbContext())
+            Console.WriteLine($"String: {entity.String}");
+            Console.WriteLine($"Length: {entity.Length}");
+            foreach (var s in entity.Strings)
             {
-                db.Database.Migrate();
-
-                var g = db.GenderEntities.Select(x => x);
-
-                foreach(var i in g)
-                {
-                    Console.WriteLine(i.Id);
-                }
+                Console.WriteLine(s);
             }
+
+            //using (var db = new ParkingDbContext())
+            //{
+            //    //db.Database.Migrate();
+
+            //    var g = db.GenderEntities.Select(x => x);
+
+            //    foreach(var i in g)
+            //    {
+            //        Console.WriteLine(i.Id);
+            //    }
+            //}
 
             //using (var db = new ParkingDbContext())
             //{
