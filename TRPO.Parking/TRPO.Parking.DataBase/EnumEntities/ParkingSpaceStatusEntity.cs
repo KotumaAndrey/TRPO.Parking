@@ -1,4 +1,4 @@
-﻿using Status = TRPO.Parking.DataBase.Primitives.ParkingSpaceStatus;
+﻿using Status = TRPO.Parking.Entities.Primitives.ParkingSpaceStatus;
 
 namespace TRPO.Parking.DataBase.EnumEntities
 {

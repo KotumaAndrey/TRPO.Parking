@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "TRPO.Parking.DataBase": {
-      "commandName": "Project",
-      "workingDirectory": "D:\\TRPO.Parking\\TRPO.Parking\\TRPO.Parking.DataBase"
-    }
-  }
-}

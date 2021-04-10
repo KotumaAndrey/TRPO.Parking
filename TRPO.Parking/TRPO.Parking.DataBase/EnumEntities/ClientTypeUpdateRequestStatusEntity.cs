@@ -1,4 +1,4 @@
-﻿using RequestType = TRPO.Parking.DataBase.Primitives.ClientTypeUpdateRequestStatus;
+﻿using RequestType = TRPO.Parking.Entities.Primitives.ClientTypeUpdateRequestStatus;
 
 namespace TRPO.Parking.DataBase.EnumEntities
 {

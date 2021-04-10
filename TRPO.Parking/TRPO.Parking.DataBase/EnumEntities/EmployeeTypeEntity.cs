@@ -1,4 +1,4 @@
-﻿using EmployeeType = TRPO.Parking.DataBase.Primitives.EmployeeType;
+﻿using EmployeeType = TRPO.Parking.Entities.Primitives.EmployeeType;
 
 namespace TRPO.Parking.DataBase.EnumEntities
 {

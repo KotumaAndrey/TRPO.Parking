@@ -20,5 +20,6 @@
     <ProjectReference Include="..\..\TRPO.Parking.Dependencies\TRPO.Parking.Dependencies.csproj" />
     <ProjectReference Include="..\..\TRPO.Parking.Entities\TRPO.Parking.Entities.csproj" />
     <ProjectReference Include="..\..\TRPO.Parking.Logic.Interfaces\TRPO.Parking.Logic.Interfaces.csproj" />
+    <ProjectReference Include="..\..\TRPO.Parking.Utilitas\TRPO.Parking.Utilitas.csproj" />
   </ItemGroup>
 </Project>

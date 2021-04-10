@@ -1,4 +1,4 @@
-﻿using Gender = TRPO.Parking.DataBase.Primitives.Gender;
+﻿using Gender = TRPO.Parking.Entities.Primitives.Gender;
 
 namespace TRPO.Parking.DataBase.EnumEntities
 {

@@ -2,36 +2,73 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using TRPO.Parking.DataBase.Entities;
 using TRPO.Parking.DataBase.EnumEntities;
-using TRPO.Parking.DataBase.Primitives;
+using TRPO.Parking.Entities.Primitives;
+using TRPO.Parking.Utilitas.Pathfinder;
+
+using LE = TRPO.Parking.Entities;
 
 namespace TRPO.Parking.DataBase
 {
     public class ParkingDbContext : DbContext
     {
+        private IPathfinder _pathfinder;
+
+        public ParkingDbContext(IPathfinder pathfinder)
+        {
+            _pathfinder = pathfinder;
+
+            var created = Database.EnsureCreated();
+            //if(created)
+            //{
+            InitEnumTables();
+            InitTablesWithDefaultValues();
+            //}
+        }
+
         #region Init
         public void InitEnumTables()
         {
-            ClientTypeEntities.AddEnumValues<ClientTypeEntity, ClientType>(value =>
+            ClientTypeEntities.AddOrUpdateEnumValues<ClientTypeEntity, ClientType>(value =>
             {
-                var priceMultipler = value.GetPriceMultipler();
-                var entity = new ClientTypeEntity(value, priceMultipler);
+                var price = value.GetPrice();
+                var entity = new ClientTypeEntity(value, price);
                 return entity;
             });
 
-            ClientTypeUpdateRequestStatusEntities.AddEnumValues<ClientTypeUpdateRequestStatusEntity, ClientTypeUpdateRequestStatus>(value => new ClientTypeUpdateRequestStatusEntity(value));
+            ClientTypeUpdateRequestStatusEntities
+                .AddOrUpdateEnumValues<ClientTypeUpdateRequestStatusEntity, ClientTypeUpdateRequestStatus>(value => new ClientTypeUpdateRequestStatusEntity(value));
 
-            EmployeeTypeEntities.AddEnumValues<EmployeeTypeEntity, EmployeeType>(value => new EmployeeTypeEntity(value));
+            EmployeeTypeEntities.AddOrUpdateEnumValues<EmployeeTypeEntity, EmployeeType>(value => new EmployeeTypeEntity(value));
 
-            GenderEntities.AddEnumValues<GenderEntity, Gender>(value => new GenderEntity(value));
+            GenderEntities.AddOrUpdateEnumValues<GenderEntity, Gender>(value => new GenderEntity(value));
 
-            ParkingSpaceStatusEntities.AddEnumValues<ParkingSpaceStatusEntity, ParkingSpaceStatus>(value => new ParkingSpaceStatusEntity(value));
+            ParkingSpaceStatusEntities.AddOrUpdateEnumValues<ParkingSpaceStatusEntity, ParkingSpaceStatus>(value => new ParkingSpaceStatusEntity(value));
+
+            SaveChanges();
+        }
+
+        public void InitTablesWithDefaultValues()
+        {
+            RentalRenewalTypes.AddOrUpdateOuterValues(
+                LE.RentalRenewalType.DefaultValues,
+                value => new RentalRenewalType
+                {
+                    Id = value.Id,
+                    Title = value.Title,
+                    PriceMultiplier = value.PriceMultiplier,
+                    From = value.From,
+                    To = value.To
+                });
 
             SaveChanges();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=Parking.db");
+            var fileName = "Parking.db";
+            var path = _pathfinder.GetPath(fileName);
+            var connectionString = $"Filename={path}";
+            optionsBuilder.UseSqlite(connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -68,15 +105,6 @@ namespace TRPO.Parking.DataBase
             base.OnModelCreating(modelBuilder);
         }
         #endregion
-
-        public ParkingDbContext()
-        {
-            var created = Database.EnsureCreated();
-            //if(created)
-            //{
-            InitEnumTables();
-            //}
-        }
 
         #region Entities
 
