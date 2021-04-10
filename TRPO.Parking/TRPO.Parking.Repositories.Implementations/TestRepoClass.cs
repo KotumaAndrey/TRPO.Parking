@@ -5,11 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using TRPO.Parking.DataBase;
 using TRPO.Parking.Repositories.Interfaces;
+using TRPO.Parking.Utilitas.Pathfinder;
 
 namespace TRPO.Parking.Repositories.Implementations
 {
-    internal class TestRepoClass : ITestRepoInterface
+    internal class TestRepoClass : BaseRepository, ITestRepoInterface
     {
+        public TestRepoClass(IPathfinder pathfinder)
+            : base(pathfinder)
+        {
+
+        }
+
         public async Task<string> GetTestValue()
         {
             return "Test value";
@@ -17,10 +24,8 @@ namespace TRPO.Parking.Repositories.Implementations
 
         public async Task<IEnumerable<string>> GetGenders()
         {
-            using (var db = new ParkingDbContext())
+            using (var db = CreateConection())
             {
-                //db.Database.Migrate();
-
                 var genders = db.GenderEntities
                     .Select(x => x.Id.ToString())
                     .ToArray();

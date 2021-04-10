@@ -1,4 +1,5 @@
 ﻿using TRPO.Parking.DataBase.EnumEntities;
+using TRPO.Parking.Entities.Primitives;
 
 namespace TRPO.Parking.DataBase.Entities
 {
@@ -12,7 +13,7 @@ namespace TRPO.Parking.DataBase.Entities
         public int Row { get; set; }
         public int Colunm { get; set; }
 
-        public Primitives.ParkingSpaceStatus StatusId { get; set; }
+        public ParkingSpaceStatus StatusId { get; set; }
         public virtual ParkingSpaceStatusEntity Status { get; set; }
     }
 }

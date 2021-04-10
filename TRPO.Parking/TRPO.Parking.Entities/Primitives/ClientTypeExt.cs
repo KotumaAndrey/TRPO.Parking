@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Xml.Linq;
 
-namespace TRPO.Parking.DataBase.Primitives
+namespace TRPO.Parking.Entities.Primitives
 {
-    internal static class ClientTypeExt
+    public static class ClientTypeExt
     {
         private static Dictionary<ClientType, double> priceMultiplers = null;
 
@@ -13,7 +14,7 @@ namespace TRPO.Parking.DataBase.Primitives
         {
             priceMultiplers = new Dictionary<ClientType, double>();
 
-            var xDocument = XDocument.Load("Config/DB/ClientTypeValues.xml");
+            var xDocument = XDocument.Parse(PrimitivesConfig.ClientTypeValues);
 
             var elements = xDocument.Element("ClientTypeConfig").Elements("ClientType");
 

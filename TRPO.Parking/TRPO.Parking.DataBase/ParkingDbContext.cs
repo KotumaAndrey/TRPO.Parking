@@ -2,12 +2,26 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using TRPO.Parking.DataBase.Entities;
 using TRPO.Parking.DataBase.EnumEntities;
-using TRPO.Parking.DataBase.Primitives;
+using TRPO.Parking.Entities.Primitives;
+using TRPO.Parking.Utilitas.Pathfinder;
 
 namespace TRPO.Parking.DataBase
 {
     public class ParkingDbContext : DbContext
     {
+        private IPathfinder _pathfinder;
+
+        public ParkingDbContext(IPathfinder pathfinder)
+        {
+            _pathfinder = pathfinder;
+
+            var created = Database.EnsureCreated();
+            //if(created)
+            //{
+            InitEnumTables();
+            //}
+        }
+
         #region Init
         public void InitEnumTables()
         {
@@ -31,7 +45,10 @@ namespace TRPO.Parking.DataBase
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=Parking.db");
+            var fileName = "Parking.db";
+            var path = _pathfinder.GetPath(fileName);
+            var connectionString = $"Filename={path}";
+            optionsBuilder.UseSqlite(connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -68,15 +85,6 @@ namespace TRPO.Parking.DataBase
             base.OnModelCreating(modelBuilder);
         }
         #endregion
-
-        public ParkingDbContext()
-        {
-            var created = Database.EnsureCreated();
-            //if(created)
-            //{
-            InitEnumTables();
-            //}
-        }
 
         #region Entities
 

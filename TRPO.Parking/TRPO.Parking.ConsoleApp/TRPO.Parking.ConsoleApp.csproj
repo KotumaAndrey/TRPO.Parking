@@ -16,16 +16,4 @@
     <ProjectReference Include="..\TRPO.Parking.Logic.Interfaces\TRPO.Parking.Logic.Interfaces.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="Config\DB\ClientTypeValues.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Config\DB\ClientTypeValues.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

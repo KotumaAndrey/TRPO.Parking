@@ -1,4 +1,5 @@
-﻿using ClientType = TRPO.Parking.DataBase.Primitives.ClientType;
+﻿using TRPO.Parking.Entities.Primitives;
+using ClientType = TRPO.Parking.Entities.Primitives.ClientType;
 
 namespace TRPO.Parking.DataBase.EnumEntities
 {

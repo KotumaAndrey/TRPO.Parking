@@ -32,13 +32,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TRPO.Parking.Logic.Interfac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TRPO.Parking.ConsoleApp", "TRPO.Parking.ConsoleApp\TRPO.Parking.ConsoleApp.csproj", "{8D172580-A586-4270-B3FC-FFA96ECA2624}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.DataBase", "TRPO.Parking.DataBase\TRPO.Parking.DataBase.csproj", "{CAFD8246-4D14-4DE3-B8C9-F7F7DFACF099}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TRPO.Parking.DataBase", "TRPO.Parking.DataBase\TRPO.Parking.DataBase.csproj", "{CAFD8246-4D14-4DE3-B8C9-F7F7DFACF099}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Logic.Implementations", "TRPO.Parking.Logic.Implementations\TRPO.Parking.Logic.Implementations.csproj", "{9E51D585-CC2C-471B-9B77-9AB1BFCB64D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TRPO.Parking.Logic.Implementations", "TRPO.Parking.Logic.Implementations\TRPO.Parking.Logic.Implementations.csproj", "{9E51D585-CC2C-471B-9B77-9AB1BFCB64D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Repositories.Implementations", "TRPO.Parking.Repositories.Implementations\TRPO.Parking.Repositories.Implementations.csproj", "{0084E2D8-0442-422D-B143-94ACFA9F7111}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TRPO.Parking.Repositories.Implementations", "TRPO.Parking.Repositories.Implementations\TRPO.Parking.Repositories.Implementations.csproj", "{0084E2D8-0442-422D-B143-94ACFA9F7111}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TRPO.Parking.Tests", "TRPO.Parking.Tests\TRPO.Parking.Tests.csproj", "{C770AB2E-0579-4DD6-92BE-D36BF9E88306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPO.Parking.Utilitas", "TRPO.Parking.Utilitas\TRPO.Parking.Utilitas.csproj", "{112DF6E0-3743-4DA3-88AD-C5F169B98861}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +94,10 @@ Global
 		{C770AB2E-0579-4DD6-92BE-D36BF9E88306}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C770AB2E-0579-4DD6-92BE-D36BF9E88306}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C770AB2E-0579-4DD6-92BE-D36BF9E88306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{112DF6E0-3743-4DA3-88AD-C5F169B98861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{112DF6E0-3743-4DA3-88AD-C5F169B98861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{112DF6E0-3743-4DA3-88AD-C5F169B98861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{112DF6E0-3743-4DA3-88AD-C5F169B98861}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{9E51D585-CC2C-471B-9B77-9AB1BFCB64D0} = {60872320-AB6C-454C-ABAA-56D0D88D22B8}
 		{0084E2D8-0442-422D-B143-94ACFA9F7111} = {FDE43108-5AE9-47BD-9EF4-9AB129AC5239}
 		{C770AB2E-0579-4DD6-92BE-D36BF9E88306} = {D2CBDC9C-41CC-4536-A957-4004E27EAAFA}
+		{112DF6E0-3743-4DA3-88AD-C5F169B98861} = {BF162355-F6E7-47C7-8A16-F6D303DC6FA5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C86C272D-7895-48E9-B5CC-C77932E2D616}
