@@ -1,8 +1,9 @@
 ﻿using System;
+using TRPO.Parking.DataBase.EntityInterfaces;
 
 namespace TRPO.Parking.DataBase.Entities
 {
-    public class ClosedRentalRenewal
+    public class ClosedRentalRenewal : IEntityWithIntId
     {
         public int Id { get; set; }
 

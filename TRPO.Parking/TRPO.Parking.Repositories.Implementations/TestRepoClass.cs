@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using TRPO.Parking.DataBase;
 using TRPO.Parking.Repositories.Interfaces;
 using TRPO.Parking.Utilitas.Pathfinder;
 
@@ -17,9 +14,14 @@ namespace TRPO.Parking.Repositories.Implementations
 
         }
 
-        public async Task<string> GetTestValue()
+        public async Task<IEnumerable<string>> GetTestValue()
         {
-            return "Test value";
+            return new []
+            {
+                "Test value1",
+                "Test value2",
+                "Test value3",
+            };
         }
 
         public async Task<IEnumerable<string>> GetGenders()
@@ -31,6 +33,30 @@ namespace TRPO.Parking.Repositories.Implementations
                     .ToArray();
 
                 return genders;
+            }
+        }
+
+        public async Task<IEnumerable<string>> GetClientTypes()
+        {
+            using (var db = CreateConection())
+            {
+                var clientTypes = db.ClientTypeEntities
+                    .Select(x => $"{x.Id} - {x.Price}")
+                    .ToArray();
+
+                return clientTypes;
+            }
+        }
+
+        public async Task<IEnumerable<string>> GetRentalRenewalTypes()
+        {
+            using (var db = CreateConection())
+            {
+                var renewalTypes = db.RentalRenewalTypes
+                    .Select(x => $"{x.Id} - {x.Title} - ({x.PriceMultiplier}) - {x.From} : {x.To}")
+                    .ToArray();
+
+                return renewalTypes;
             }
         }
     }

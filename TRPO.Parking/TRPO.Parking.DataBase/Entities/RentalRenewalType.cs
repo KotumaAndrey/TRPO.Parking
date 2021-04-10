@@ -1,6 +1,8 @@
-﻿namespace TRPO.Parking.DataBase.Entities
+﻿using TRPO.Parking.DataBase.EntityInterfaces;
+
+namespace TRPO.Parking.DataBase.Entities
 {
-    public class RentalRenewalType
+    public class RentalRenewalType : IEntityWithIntId
     {
         public int Id { get; set; }
         public string Title { get; set; }

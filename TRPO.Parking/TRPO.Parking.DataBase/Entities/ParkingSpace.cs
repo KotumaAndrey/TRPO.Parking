@@ -1,9 +1,10 @@
-﻿using TRPO.Parking.DataBase.EnumEntities;
+﻿using TRPO.Parking.DataBase.EntityInterfaces;
+using TRPO.Parking.DataBase.EnumEntities;
 using TRPO.Parking.Entities.Primitives;
 
 namespace TRPO.Parking.DataBase.Entities
 {
-    public class ParkingSpace
+    public class ParkingSpace : IEntityWithIntId
     {
         public int Id { get; set; }
 

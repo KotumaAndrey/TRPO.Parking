@@ -1,5 +1,4 @@
-﻿using TRPO.Parking.Entities.Primitives;
-using ClientType = TRPO.Parking.Entities.Primitives.ClientType;
+﻿using ClientType = TRPO.Parking.Entities.Primitives.ClientType;
 
 namespace TRPO.Parking.DataBase.EnumEntities
 {
@@ -7,11 +6,11 @@ namespace TRPO.Parking.DataBase.EnumEntities
     {
         public ClientTypeEntity() : base() { }
         
-        public ClientTypeEntity(ClientType value, double priceMultipler) : base(value)
+        public ClientTypeEntity(ClientType value, double price) : base(value)
         {
-            PriceMultipler = priceMultipler;
+            Price = price;
         }
 
-        public double PriceMultipler { get; set; }
+        public double Price { get; set; }
     }
 }

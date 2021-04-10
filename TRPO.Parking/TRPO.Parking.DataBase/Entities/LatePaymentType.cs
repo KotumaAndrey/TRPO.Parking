@@ -1,6 +1,8 @@
-﻿namespace TRPO.Parking.DataBase.Entities
+﻿using TRPO.Parking.DataBase.EntityInterfaces;
+
+namespace TRPO.Parking.DataBase.Entities
 {
-    public class LatePaymentType
+    public class LatePaymentType : IEntityWithIntId
     {
         public int Id { get; set; }
         public int From { get; set; }

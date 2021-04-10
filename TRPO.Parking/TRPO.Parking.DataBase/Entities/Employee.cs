@@ -1,12 +1,14 @@
 ﻿using System;
+using TRPO.Parking.DataBase.EntityInterfaces;
 using TRPO.Parking.DataBase.EnumEntities;
 using TRPO.Parking.Entities.Primitives;
 
 namespace TRPO.Parking.DataBase.Entities
 {
-    public class Employee
+    public class Employee : IEntityWithIntId
     {
         public int Id { get; set; }
+
         public string Name { get; set; }
         public DateTime EmployeementDate { get; set; }
         public int Salary { get; set; }

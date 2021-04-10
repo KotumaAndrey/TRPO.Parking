@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Resources;
 using System.Xml.Linq;
 
 namespace TRPO.Parking.Entities.Primitives
 {
     public static class ClientTypeExt
     {
-        private static Dictionary<ClientType, double> priceMultiplers = null;
+        private static Dictionary<ClientType, double> price = null;
 
-        private static void InitPriceMultiplers()
+        private static void InitPrice()
         {
-            priceMultiplers = new Dictionary<ClientType, double>();
+            price = new Dictionary<ClientType, double>();
 
-            var xDocument = XDocument.Parse(PrimitivesConfig.ClientTypeValues);
+            var clientTypeValues = Configs.PrimitivesConfig.ClientTypeValues;
+            var xDocument = XDocument.Parse(clientTypeValues);
 
             var elements = xDocument.Element("ClientTypeConfig").Elements("ClientType");
 
@@ -26,20 +26,20 @@ namespace TRPO.Parking.Entities.Primitives
             {
                 var name = type.ToString();
                 var curElement = elements.First(e => e.Attribute("Name").Value == name);
-                var curValue = curElement.Attribute("PriceMultipler").Value;
+                var curValue = curElement.Attribute("Price").Value;
                 var mult = double.Parse(curValue);
-                priceMultiplers.Add(type, mult);
+                price.Add(type, mult);
             }
         }
 
-        public static double GetPriceMultipler(this ClientType type)
+        public static double GetPrice(this ClientType type)
         {
-            if (priceMultiplers is null)
+            if (price is null)
             {
-                InitPriceMultiplers();
+                InitPrice();
             }
 
-            return priceMultiplers[type];
+            return price[type];
         }
     }
 }

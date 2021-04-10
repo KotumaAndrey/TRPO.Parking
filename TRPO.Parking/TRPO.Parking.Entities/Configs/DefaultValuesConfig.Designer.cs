@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TRPO.Parking.Entities {
+namespace TRPO.Parking.Entities.Configs {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace TRPO.Parking.Entities {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class PrimitivesConfig {
+    internal class DefaultValuesConfig {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal PrimitivesConfig() {
+        internal DefaultValuesConfig() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace TRPO.Parking.Entities {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TRPO.Parking.Entities.PrimitivesConfig", typeof(PrimitivesConfig).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TRPO.Parking.Entities.Configs.DefaultValuesConfig", typeof(DefaultValuesConfig).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,17 +61,16 @@ namespace TRPO.Parking.Entities {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &lt;ClientTypeConfig&gt;
-        ///	&lt;ClientType Name=&quot;Standart&quot; PriceMultipler=&quot;1&quot; /&gt;
-        ///	&lt;ClientType Name=&quot;Regular&quot; PriceMultipler=&quot;2&quot; /&gt;
-        ///	&lt;ClientType Name=&quot;White&quot; PriceMultipler=&quot;3&quot; /&gt;
-        ///	&lt;ClientType Name=&quot;Gray&quot; PriceMultipler=&quot;4&quot; /&gt;
-        ///	&lt;ClientType Name=&quot;Black&quot; PriceMultipler=&quot;5&quot; /&gt;
-        ///&lt;/ClientTypeConfig&gt;.
+        ///   Ищет локализованную строку, похожую на &lt;RentalRenewalTypeConfig&gt;
+        ///	&lt;RentalRenewalType Name=&quot;Type1&quot; PriceMultipler=&quot;1&quot; To=&quot;90&quot; /&gt;
+        ///	&lt;RentalRenewalType Name=&quot;Type2&quot; PriceMultipler=&quot;1.5&quot; From=&quot;90&quot; To=&quot;20&quot; /&gt;
+        ///	&lt;RentalRenewalType Name=&quot;White&quot; PriceMultipler=&quot;1.8&quot; From=&quot;20&quot; To=&quot;0&quot; /&gt;
+        ///&lt;/RentalRenewalTypeConfig&gt;
+        ///.
         /// </summary>
-        internal static string ClientTypeValues {
+        internal static string RentalRenewalTypeValues {
             get {
-                return ResourceManager.GetString("ClientTypeValues", resourceCulture);
+                return ResourceManager.GetString("RentalRenewalTypeValues", resourceCulture);
             }
         }
     }

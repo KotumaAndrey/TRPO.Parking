@@ -1,8 +1,10 @@
 ﻿using System;
+using TRPO.Parking.DataBase.EntityInterfaces;
 
 namespace TRPO.Parking.DataBase.EnumEntities
 {
-    public class BaseEnumEntity<T> where T : Enum
+    public class BaseEnumEntity<T> : IEnumEntity<T> 
+        where T : Enum
     {
         public BaseEnumEntity() { }
 

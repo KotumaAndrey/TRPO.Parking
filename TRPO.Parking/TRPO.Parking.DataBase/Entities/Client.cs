@@ -1,12 +1,15 @@
 ﻿using System;
+using TRPO.Parking.DataBase.EntityInterfaces;
 using TRPO.Parking.DataBase.EnumEntities;
 using TRPO.Parking.Entities.Primitives;
 
 namespace TRPO.Parking.DataBase.Entities
 {
-    public class Client
+    public class Client : IEntityWithIntId
     {
         public int Id { get; set; }
+
+        public string Login { get; set; }
         public string Password { get; set; }
 
         public string Name { get; set; }

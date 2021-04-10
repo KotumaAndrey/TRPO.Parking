@@ -1,13 +1,14 @@
 ﻿using System;
+using TRPO.Parking.DataBase.EntityInterfaces;
 using TRPO.Parking.DataBase.EnumEntities;
 using TRPO.Parking.Entities.Primitives;
 
 namespace TRPO.Parking.DataBase.Entities
 {
-    public class ClientTypeUpdateRequest
+    public class ClientTypeUpdateRequest : IEntityWithIntId
     {
         public int Id { get; set; }
-        
+
         public int ClientId { get; set; }
         public virtual Client Client { get; set; }
 

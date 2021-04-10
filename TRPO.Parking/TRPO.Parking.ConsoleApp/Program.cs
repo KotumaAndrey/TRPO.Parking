@@ -7,6 +7,7 @@ using Autofac;
 using Microsoft.EntityFrameworkCore;
 using TRPO.Parking.DataBase;
 using TRPO.Parking.Dependencies;
+using TRPO.Parking.Entities;
 using TRPO.Parking.Logic.Interfaces;
 
 namespace TRPO.Parking.ConsoleApp
@@ -15,42 +16,32 @@ namespace TRPO.Parking.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Test:");
-
             var logic = DependencyResolver.Container.Resolve<ITestLogicInterface>();
+
             var entity = logic.GetTestValue().Result;
+            Print(entity);
 
-            Console.WriteLine($"String: {entity.String}");
-            Console.WriteLine($"Length: {entity.Length}");
-            foreach (var s in entity.Strings)
-            {
-                Console.WriteLine(s);
-            }
+            entity = logic.GetGenders().Result;
+            Print(entity);
 
-            //using (var db = new ParkingDbContext())
-            //{
-            //    //db.Database.Migrate();
+            entity = logic.GetClientTypes().Result;
+            Print(entity);
 
-            //    var g = db.GenderEntities.Select(x => x);
-
-            //    foreach(var i in g)
-            //    {
-            //        Console.WriteLine(i.Id);
-            //    }
-            //}
-
-            //using (var db = new ParkingDbContext())
-            //{
-            //    //var t = db.GenderEntities.Select(x => x);
-            //    //foreach (var i  in t)
-            //    //{
-            //    //    Console.WriteLine(i.Id);
-            //    //}
-            //}
+            entity = logic.GetRentalRenewalTypes().Result;
+            Print(entity);
 
             // --- --- ---
             Console.WriteLine("\nend");
             Console.ReadKey();
+        }
+
+        static void Print(TestEntity entity)
+        {
+            foreach (var s in entity.Strings)
+            {
+                Console.WriteLine(s);
+            }
+            Console.WriteLine();
         }
     }
 }
