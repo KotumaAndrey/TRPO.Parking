@@ -1,13 +1,7 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Autofac;
-using Microsoft.EntityFrameworkCore;
-using TRPO.Parking.DataBase;
 using TRPO.Parking.Dependencies;
-using TRPO.Parking.Entities;
 using TRPO.Parking.Logic.Interfaces;
 
 namespace TRPO.Parking.ConsoleApp
@@ -18,26 +12,26 @@ namespace TRPO.Parking.ConsoleApp
         {
             var logic = DependencyResolver.Container.Resolve<ITestLogicInterface>();
 
-            var entity = logic.GetTestValue().Result;
-            Print(entity);
+            var result = logic.GetTestValue().Result;
+            Print(result);
 
-            entity = logic.GetGenders().Result;
-            Print(entity);
+            result = logic.GetGenders().Result;
+            Print(result);
 
-            entity = logic.GetClientTypes().Result;
-            Print(entity);
+            result = logic.GetClientTypes().Result;
+            Print(result);
 
-            entity = logic.GetRentalRenewalTypes().Result;
-            Print(entity);
+            result = logic.GetRentalRenewalTypes().Result;
+            Print(result);
 
             // --- --- ---
             Console.WriteLine("\nend");
             Console.ReadKey();
         }
 
-        static void Print(TestEntity entity)
+        static void Print(IEnumerable<string> entity)
         {
-            foreach (var s in entity.Strings)
+            foreach (var s in entity)
             {
                 Console.WriteLine(s);
             }

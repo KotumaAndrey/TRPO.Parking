@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TRPO.Parking.DataBase.Mappers;
+using TRPO.Parking.Entities;
+using TRPO.Parking.Entities.Primitives;
 using TRPO.Parking.Repositories.Interfaces;
 using TRPO.Parking.Utilitas.Pathfinder;
 
@@ -24,12 +27,12 @@ namespace TRPO.Parking.Repositories.Implementations
             };
         }
 
-        public async Task<IEnumerable<string>> GetGenders()
+        public async Task<IEnumerable<Gender>> GetGenders()
         {
             using (var db = CreateConection())
             {
                 var genders = db.GenderEntities
-                    .Select(x => x.Id.ToString())
+                    .Select(x => x.Id)
                     .ToArray();
 
                 return genders;
@@ -48,12 +51,12 @@ namespace TRPO.Parking.Repositories.Implementations
             }
         }
 
-        public async Task<IEnumerable<string>> GetRentalRenewalTypes()
+        public async Task<IEnumerable<RentalRenewalType>> GetRentalRenewalTypes()
         {
             using (var db = CreateConection())
             {
                 var renewalTypes = db.RentalRenewalTypes
-                    .Select(x => $"{x.Id} - {x.Title} - ({x.PriceMultiplier}) - {x.From} : {x.To}")
+                    .Select(RentalRenewalTypeMapper.ToLogic)
                     .ToArray();
 
                 return renewalTypes;
