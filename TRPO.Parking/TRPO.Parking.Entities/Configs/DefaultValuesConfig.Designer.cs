@@ -73,5 +73,21 @@ namespace TRPO.Parking.Entities.Configs {
                 return ResourceManager.GetString("RentalRenewalTypeValues", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на &lt;LatePaymentTypeConfig&gt;
+        ///	&lt;LatePaymentType PriceMultipler=&quot;2&quot; From=&quot;0&quot; To=&quot;5&quot; /&gt;
+        ///	&lt;LatePaymentType PriceMultipler=&quot;3&quot; From=&quot;6&quot; To=&quot;20&quot; /&gt;
+        ///	&lt;LatePaymentType PriceMultipler=&quot;5&quot; From=&quot;21&quot; /&gt;
+        ///&lt;/LatePaymentTypeConfig&gt;
+        ///.
+        /// </summary>
+        internal static string LatePaymentTypeValues
+        {
+            get
+            {
+                return ResourceManager.GetString("LatePaymentTypeValues", resourceCulture);
+            }
+        }
     }
 }

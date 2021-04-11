@@ -3,41 +3,38 @@ using System.Xml.Linq;
 
 namespace TRPO.Parking.Entities
 {
-    public class RentalRenewalType
-    { 
-        public static IEnumerable<RentalRenewalType> DefaultValues { get; private set; }
+    public class LatePaymentType
+    {
+        public static IEnumerable<LatePaymentType> DefaultValues { get; private set; }
 
-        static RentalRenewalType()
+        static LatePaymentType()
         {
-            var values = new List<RentalRenewalType>();
+            var values = new List<LatePaymentType>();
 
-            var rentalRenewalTypeValues = Configs.DefaultValuesConfig.RentalRenewalTypeValues;
-            var xDocument = XDocument.Parse(rentalRenewalTypeValues);
+            var latePaymentTypeValues = Configs.DefaultValuesConfig.LatePaymentTypeValues;
+            var xDocument = XDocument.Parse(latePaymentTypeValues);
 
-            var elements = xDocument.Element("RentalRenewalTypeConfig").Elements("RentalRenewalType");
+            var elements = xDocument.Element("LatePaymentTypeConfig").Elements("LatePaymentType");
 
             foreach (var element in elements)
             {
                 var idValue = element.Attribute("Id")?.Value;
                 var id = int.Parse(idValue);
 
-                var title = element.Attribute("Name")?.Value;
-
                 var priceMultiplerValue = element.Attribute("PriceMultipler")?.Value;
                 var priceMultipler = double.Parse(priceMultiplerValue);
 
                 var FromValue = element.Attribute("From")?.Value;
-                var From = FromValue is null 
-                    ? (int?)null 
-                    : int.Parse(FromValue);
+                var From = int.Parse(FromValue);
 
                 var ToValue = element.Attribute("To")?.Value;
-                var To = int.Parse(ToValue);
+                var To = ToValue is null
+                    ? (int?)null
+                    : int.Parse(ToValue);
 
-                var value = new RentalRenewalType
+                var value = new LatePaymentType
                 {
                     Id = id,
-                    Title = title,
                     PriceMultiplier = priceMultipler,
                     From = From,
                     To = To
@@ -50,9 +47,8 @@ namespace TRPO.Parking.Entities
         }
 
         public int Id { get; set; }
-        public string Title { get; set; }
         public double PriceMultiplier { get; set; }
-        public int? From { get; set; }
-        public int To { get; set; }
+        public int From { get; set; }
+        public int? To { get; set; }
     }
 }
