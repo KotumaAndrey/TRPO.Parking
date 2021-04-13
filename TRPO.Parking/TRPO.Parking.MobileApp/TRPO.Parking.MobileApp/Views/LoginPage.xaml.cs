@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TRPO.Parking.MobileApp.ViewModels;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
-namespace TRPO.Parking.MobileApp
+namespace TRPO.Parking.MobileApp.Views
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class LoginPage : ContentPage
     {
-        public MainPage()
+        public LoginPage()
         {
             InitializeComponent();
+            this.BindingContext = new LoginViewModel();
         }
         private void loginEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -20,6 +23,7 @@ namespace TRPO.Parking.MobileApp
         }
         private void EnterBtn_Clicked(object sender, System.EventArgs e)
         {
+
         }
         private async void RegistrationBtn_Clicked(object sender, System.EventArgs e)
         {
@@ -31,6 +35,5 @@ namespace TRPO.Parking.MobileApp
             // Page appearance not animated
             await Navigation.PushModalAsync(new ContactsPage(), true);
         }
-
     }
 }

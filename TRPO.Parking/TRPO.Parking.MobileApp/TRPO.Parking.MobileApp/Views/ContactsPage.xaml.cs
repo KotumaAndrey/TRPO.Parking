@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TRPO.Parking.MobileApp
+namespace TRPO.Parking.MobileApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactsPage : ContentPage
@@ -20,9 +20,6 @@ namespace TRPO.Parking.MobileApp
         {
             // Page appearance not animated
             await Navigation.PopModalAsync();
-
         }
-
-
     }
 }

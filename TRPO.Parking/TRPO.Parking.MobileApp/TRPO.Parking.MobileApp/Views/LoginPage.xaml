@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TRPO.Parking.MobileApp.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="stackLayout" Spacing="8">
+                <Label x:Name="Title" FontSize="Large" Text="Автосервис у ашота"/>
+                <Entry x:Name="loginEntry" Placeholder = "Login" TextChanged="loginEntry_TextChanged" />
+                <Entry x:Name="passwordEntry"  Placeholder = "Password" IsPassword ="True" />
+                <Label x:Name="textLabel" FontSize="Large" />
+                <Button x:Name="EnterBtn" FontSize="Large" Text="Вход" Command="{Binding LoginCommand}"/>
+                <Button x:Name="RegistrationBtn" FontSize="Large" Text="Регистрация" Clicked="RegistrationBtn_Clicked"/>
+                <Button x:Name="ContactsBtn" FontSize="Large" Text="Контакты" Clicked="ContactsBtn_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
