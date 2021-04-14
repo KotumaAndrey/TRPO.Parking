@@ -38,7 +38,7 @@ namespace TRPO.Parking.Logic.Implementations
         {
             var t = await _testRepo.GetRentalRenewalTypes();
             var res = t
-                .Select(x => $"{x.Id} - {x.Title} - ({x.PriceMultiplier}) - {x.From} : {x.To}")
+                .Select(x => $"{x.Id} - ({x.PriceMultiplier}) - {x.From} : {x.To}")
                 .ToArray();
             return res;
         }

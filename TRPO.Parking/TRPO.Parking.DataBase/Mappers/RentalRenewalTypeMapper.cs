@@ -11,7 +11,6 @@ namespace TRPO.Parking.DataBase.Mappers
             rentalRenewalType => new DB.RentalRenewalType
             {
                 Id = rentalRenewalType.Id,
-                Title = rentalRenewalType.Title,
                 PriceMultiplier = rentalRenewalType.PriceMultiplier,
                 From = rentalRenewalType.From,
                 To = rentalRenewalType.To
@@ -21,7 +20,6 @@ namespace TRPO.Parking.DataBase.Mappers
             rentalRenewalType => new LE.RentalRenewalType
             {
                 Id = rentalRenewalType.Id,
-                Title = rentalRenewalType.Title,
                 PriceMultiplier = rentalRenewalType.PriceMultiplier,
                 From = rentalRenewalType.From,
                 To = rentalRenewalType.To

@@ -21,8 +21,6 @@ namespace TRPO.Parking.Entities
                 var idValue = element.Attribute("Id")?.Value;
                 var id = int.Parse(idValue);
 
-                var title = element.Attribute("Name")?.Value;
-
                 var priceMultiplerValue = element.Attribute("PriceMultipler")?.Value;
                 var priceMultipler = double.Parse(priceMultiplerValue);
 
@@ -37,7 +35,6 @@ namespace TRPO.Parking.Entities
                 var value = new RentalRenewalType
                 {
                     Id = id,
-                    Title = title,
                     PriceMultiplier = priceMultipler,
                     From = From,
                     To = To
@@ -50,7 +47,6 @@ namespace TRPO.Parking.Entities
         }
 
         public int Id { get; set; }
-        public string Title { get; set; }
         public double PriceMultiplier { get; set; }
         public int? From { get; set; }
         public int To { get; set; }
