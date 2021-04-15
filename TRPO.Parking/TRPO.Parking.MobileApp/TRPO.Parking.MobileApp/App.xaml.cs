@@ -1,6 +1,6 @@
-﻿using System;
+﻿using TRPO.Parking.Dependencies;
+using TRPO.Parking.Utilitas.Pathfinder;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace TRPO.Parking.MobileApp
 {
@@ -8,6 +8,8 @@ namespace TRPO.Parking.MobileApp
     {
         public App()
         {
+            DependencyResolver.Builder.Register<IPathfinder, AndroidFilePathfinder>();
+
             InitializeComponent();
 
             MainPage = new MainPage();

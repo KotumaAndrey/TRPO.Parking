@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Autofac;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TRPO.Parking.Dependencies;
+using TRPO.Parking.Entities;
+using TRPO.Parking.Logic.Interfaces;
 using Xamarin.Forms;
 
 namespace TRPO.Parking.MobileApp
@@ -14,23 +13,29 @@ namespace TRPO.Parking.MobileApp
         {
             InitializeComponent();
         }
+
         private void loginEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
             textLabel.Text = loginEntry.Text;
         }
+
         private void EnterBtn_Clicked(object sender, System.EventArgs e)
         {
         }
+
         private async void RegistrationBtn_Clicked(object sender, System.EventArgs e)
         {
-            // Page appearance not animated
             await Navigation.PushModalAsync(new RegistrationPage(), true);
         }
+
         private async void ContactsBtn_Clicked(object sender, System.EventArgs e)
         {
-            // Page appearance not animated
             await Navigation.PushModalAsync(new ContactsPage(), true);
         }
 
+        private async void TestBtn_Clicked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushModalAsync(new TestDependencies(), true);
+        }
     }
 }

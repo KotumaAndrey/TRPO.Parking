@@ -1,21 +1,24 @@
 ﻿using Autofac;
-using TRPO.Parking.Logic.Implementations;
-using TRPO.Parking.Repositories.Implementations;
 
 namespace TRPO.Parking.Dependencies
 {
     public static class DependencyResolver
     {
-        public static IContainer Container { get; private set; }
+        private static IContainer _container;
 
-        static DependencyResolver()
+        public static DependencyBuilder Builder { get; } = new DependencyBuilder();
+
+        public static IContainer Container
         {
-            var builder = new ContainerBuilder();
+            get
+            {
+                if (_container is null)
+                {
+                    _container = Builder.Build();
+                }
 
-            builder.RegisterRepositories();
-            builder.RegisterLogics();
-
-            Container = builder.Build();
+                return _container;
+            }
         }
     }
 }

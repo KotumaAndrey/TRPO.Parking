@@ -1,8 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>TRPO.Parking.ConsoleApp.Program</StartupObject>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,13 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TRPO.Parking.DataBase\TRPO.Parking.DataBase.csproj" />
     <ProjectReference Include="..\TRPO.Parking.Dependencies\TRPO.Parking.Dependencies.csproj" />
-    <ProjectReference Include="..\TRPO.Parking.Entities\TRPO.Parking.Entities.csproj" />
-    <ProjectReference Include="..\TRPO.Parking.Logic.Implementations\TRPO.Parking.Logic.Implementations.csproj" />
     <ProjectReference Include="..\TRPO.Parking.Logic.Interfaces\TRPO.Parking.Logic.Interfaces.csproj" />
-    <ProjectReference Include="..\TRPO.Parking.Repositories.Implementations\TRPO.Parking.Repositories.Implementations.csproj" />
-    <ProjectReference Include="..\TRPO.Parking.Repositories.Interfaces\TRPO.Parking.Repositories.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

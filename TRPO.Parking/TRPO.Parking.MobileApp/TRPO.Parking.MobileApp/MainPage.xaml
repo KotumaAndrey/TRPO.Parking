@@ -13,6 +13,7 @@
             <Button x:Name="EnterBtn" FontSize="Large" Text="Вход" Clicked="EnterBtn_Clicked"/>
             <Button x:Name="RegistrationBtn" FontSize="Large" Text="Регистрация" Clicked="RegistrationBtn_Clicked"/>
             <Button x:Name="ContactsBtn" FontSize="Large" Text="Контакты" Clicked="ContactsBtn_Clicked"/>
+            <Button x:Name="Test" FontSize="Large" Text="Test" Clicked="TestBtn_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 

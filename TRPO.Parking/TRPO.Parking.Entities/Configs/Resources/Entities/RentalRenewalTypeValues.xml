@@ -1,0 +1,5 @@
+﻿<RentalRenewalTypeConfig>
+	<RentalRenewalType Id="1" Name="Type1" PriceMultipler="1" To="90" />
+	<RentalRenewalType Id="2" Name="Type2" PriceMultipler="1.5" From="90" To="20" />
+	<RentalRenewalType Id="3" Name="Type3" PriceMultipler="1.8" From="20" To="0" />
+</RentalRenewalTypeConfig>

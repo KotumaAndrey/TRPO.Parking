@@ -1,7 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,7 +14,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TRPO.Parking.Logic.Implementations\TRPO.Parking.Logic.Implementations.csproj" />
+    <ProjectReference Include="..\TRPO.Parking.Logic.Interfaces\TRPO.Parking.Logic.Interfaces.csproj" />
     <ProjectReference Include="..\TRPO.Parking.Repositories.Implementations\TRPO.Parking.Repositories.Implementations.csproj" />
+    <ProjectReference Include="..\TRPO.Parking.Repositories.Interfaces\TRPO.Parking.Repositories.Interfaces.csproj" />
+    <ProjectReference Include="..\TRPO.Parking.Utilitas\TRPO.Parking.Utilitas.csproj" />
   </ItemGroup>
 
 </Project>

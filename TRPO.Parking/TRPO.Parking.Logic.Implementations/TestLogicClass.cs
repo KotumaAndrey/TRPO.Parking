@@ -18,14 +18,52 @@ namespace TRPO.Parking.Logic.Implementations
             _testRepo = testRepo;
         }
 
-        public TestEntity GetTestValue()
+        public async Task<TestEntity> GetTestValue()
         {
-            string str = _testRepo.GetTestValue();
-            return new TestEntity
+            var t = await _testRepo.GetTestValue();
+
+            var entity = new TestEntity
             {
-                String = str,
-                Length = str.Length,
+                Strings = t
             };
+
+            return entity;
+        }
+
+        public async Task<TestEntity> GetClientTypes()
+        {
+            var t = await _testRepo.GetClientTypes();
+
+            var entity = new TestEntity
+            {
+                Strings = t
+            };
+
+            return entity;
+        }
+
+        public async Task<TestEntity> GetGenders()
+        {
+            var t = await _testRepo.GetGenders();
+
+            var entity = new TestEntity
+            {
+                Strings = t
+            };
+
+            return entity;
+        }
+
+        public async Task<TestEntity> GetRentalRenewalTypes()
+        {
+            var t = await _testRepo.GetRentalRenewalTypes();
+
+            var entity = new TestEntity
+            {
+                Strings = t
+            };
+
+            return entity;
         }
     }
 }

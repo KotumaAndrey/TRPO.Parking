@@ -1,18 +1,19 @@
 ﻿using System;
+using TRPO.Parking.DataBase.EntityInterfaces;
 
 namespace TRPO.Parking.DataBase.Entities
 {
-    public class ClosedRentalRenewal
+    public class ClosedRentalRenewal : IEntityWithIntId
     {
         public int Id { get; set; }
 
         public int RentalId { get; set; }
-        public ClosedRental Rental { get; set; }
+        public virtual ClosedRental Rental { get; set; }
 
         public DateTime OldEndDate { get; set; }
         public DateTime NewEndDate { get; set; }
 
         public int TypeId { get; set; }
-        public RentalRenewalType Type { get; set; }
+        public virtual RentalRenewalType Type { get; set; }
     }
 }

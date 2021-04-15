@@ -1,4 +1,4 @@
-﻿namespace TRPO.Parking.DataBase.Primitives
+﻿namespace TRPO.Parking.Entities.Primitives
 {
     /// <summary>
     /// Статус запроса клиента на изменение типа

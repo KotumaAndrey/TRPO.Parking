@@ -1,7 +1,12 @@
-﻿namespace TRPO.Parking.DataBase.Entities
+﻿using TRPO.Parking.DataBase.EntityInterfaces;
+
+namespace TRPO.Parking.DataBase.Entities
 {
-    public class Floor
+    public class Floor : IEntityWithIntId
     {
         public int Id { get; set; }
+
+        public int RowCount { get; set; }
+        public int ColumnCount { get; set; }
     }
 }
