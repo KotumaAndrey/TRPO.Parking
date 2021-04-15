@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TRPO.Parking.MobileApp.MainPage">
+             x:Class="TRPO.Parking.MobileApp.MenuPages.LoginPage">
     <ContentPage.Content>
-
         <StackLayout x:Name="stackLayout" Spacing="8">
             <Label x:Name="Title" FontSize="Large" Text="Автосервис у ашота"/>
 
@@ -16,5 +15,4 @@
             <Button x:Name="Test" FontSize="Large" Text="Test" Clicked="TestBtn_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
-
 </ContentPage>

@@ -1,15 +1,18 @@
-﻿using Autofac;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using TRPO.Parking.Dependencies;
-using TRPO.Parking.Entities;
-using TRPO.Parking.Logic.Interfaces;
-using Xamarin.Forms;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace TRPO.Parking.MobileApp
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace TRPO.Parking.MobileApp.MenuPages
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class LoginPage : ContentPage
     {
-        public MainPage()
+        public LoginPage()
         {
             InitializeComponent();
         }
@@ -35,7 +38,7 @@ namespace TRPO.Parking.MobileApp
 
         private async void TestBtn_Clicked(object sender, System.EventArgs e)
         {
-            await Navigation.PushModalAsync(new TestDependencies(), true);
+            await Navigation.PushModalAsync(new TestPages.TestDependencies(), true);
         }
     }
 }

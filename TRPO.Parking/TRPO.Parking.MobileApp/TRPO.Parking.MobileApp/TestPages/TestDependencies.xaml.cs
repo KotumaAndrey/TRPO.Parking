@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Autofac;
+﻿using Autofac;
 using TRPO.Parking.Dependencies;
 using TRPO.Parking.Entities;
 using TRPO.Parking.Logic.Interfaces;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TRPO.Parking.MobileApp
+namespace TRPO.Parking.MobileApp.TestPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TestDependencies : ContentPage
