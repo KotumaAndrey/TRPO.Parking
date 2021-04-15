@@ -3,6 +3,8 @@
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
+using Android.Views;
+using Android.Widget;
 using Android.OS;
 
 namespace TRPO.Parking.MobileApp.Droid
@@ -12,6 +14,9 @@ namespace TRPO.Parking.MobileApp.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
+
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
