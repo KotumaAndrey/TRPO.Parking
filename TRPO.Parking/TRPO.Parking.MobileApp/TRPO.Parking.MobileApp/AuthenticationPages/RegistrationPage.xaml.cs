@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TRPO.Parking.MobileApp.MenuPages
+namespace TRPO.Parking.MobileApp.AuthenticationPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistrationPage : ContentPage
@@ -34,8 +28,7 @@ namespace TRPO.Parking.MobileApp.MenuPages
         }
         private async void BackBtn_Clicked(object sender, System.EventArgs e)
         {
-            // Page appearance not animated
-            await Navigation.PopModalAsync();
+            await Navigation.PopModalAsync(true);
         }
     }
 }

@@ -10,17 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace TRPO.Parking.MobileApp.MenuPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ContactsPage : ContentPage
+    public partial class AboutPage : ContentPage
     {
-        public ContactsPage()
+        public AboutPage()
         {
             InitializeComponent();
         }
+
         private async void BackBtn_Clicked(object sender, System.EventArgs e)
         {
-            // Page appearance not animated
-            await Navigation.PopModalAsync();
-
+            await Navigation.PopModalAsync(true);
         }
     }
 }

@@ -24,13 +24,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="MenuPages\ContactsPage.xaml">
+    <EmbeddedResource Update="MenuPages\AboutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MenuPages\LoginPage.xaml">
+    <EmbeddedResource Update="AuthenticationPages\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MenuPages\RegistrationPage.xaml">
+    <EmbeddedResource Update="AuthenticationPages\RegistrationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ParkingPages\ParkingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="TestDependencies.xaml">
@@ -39,5 +42,11 @@
     <EmbeddedResource Update="TestPages\TestDependencies.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MenuPages\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

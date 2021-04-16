@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using TRPO.Parking.MobileApp.MenuPages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TRPO.Parking.MobileApp.MenuPages
+namespace TRPO.Parking.MobileApp.AuthenticationPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
@@ -22,8 +17,10 @@ namespace TRPO.Parking.MobileApp.MenuPages
             textLabel.Text = loginEntry.Text;
         }
 
-        private void EnterBtn_Clicked(object sender, System.EventArgs e)
+        private async void EnterBtn_Clicked(object sender, System.EventArgs e)
         {
+            // smth
+            await Navigation.PushModalAsync(new ParkingPages.ParkingPage(), true);
         }
 
         private async void RegistrationBtn_Clicked(object sender, System.EventArgs e)
@@ -33,7 +30,7 @@ namespace TRPO.Parking.MobileApp.MenuPages
 
         private async void ContactsBtn_Clicked(object sender, System.EventArgs e)
         {
-            await Navigation.PushModalAsync(new ContactsPage(), true);
+            await Navigation.PushModalAsync(new AboutPage(), true);
         }
 
         private async void TestBtn_Clicked(object sender, System.EventArgs e)

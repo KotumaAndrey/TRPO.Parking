@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TRPO.Parking.MobileApp.MenuPages.LoginPage">
+             x:Class="TRPO.Parking.MobileApp.AuthenticationPages.LoginPage">
     <ContentPage.Content>
         <StackLayout x:Name="stackLayout" Spacing="8">
             <Label x:Name="Title" FontSize="Large" Text="Автосервис у ашота"/>
@@ -11,7 +11,7 @@
             <Label x:Name="textLabel" FontSize="Large" />
             <Button x:Name="EnterBtn" FontSize="Large" Text="Вход" Clicked="EnterBtn_Clicked"/>
             <Button x:Name="RegistrationBtn" FontSize="Large" Text="Регистрация" Clicked="RegistrationBtn_Clicked"/>
-            <Button x:Name="ContactsBtn" FontSize="Large" Text="Контакты" Clicked="ContactsBtn_Clicked"/>
+            <Button x:Name="ContactsBtn" FontSize="Large" Text="О нас" Clicked="ContactsBtn_Clicked"/>
             <Button x:Name="Test" FontSize="Large" Text="Test" Clicked="TestBtn_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
