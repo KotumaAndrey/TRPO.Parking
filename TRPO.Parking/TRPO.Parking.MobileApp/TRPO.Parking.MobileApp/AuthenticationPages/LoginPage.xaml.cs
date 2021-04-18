@@ -20,7 +20,8 @@ namespace TRPO.Parking.MobileApp.AuthenticationPages
         private async void EnterBtn_Clicked(object sender, System.EventArgs e)
         {
             // smth
-            await Navigation.PushModalAsync(new ParkingPages.ParkingPage(), true);
+            //await Navigation.PushModalAsync(new ParkingPages.ParkingPage(), true);
+            await Shell.Current.GoToAsync("parking");
         }
 
         private async void RegistrationBtn_Clicked(object sender, System.EventArgs e)

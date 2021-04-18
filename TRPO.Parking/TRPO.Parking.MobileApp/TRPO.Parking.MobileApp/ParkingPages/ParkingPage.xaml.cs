@@ -30,6 +30,14 @@ namespace TRPO.Parking.MobileApp.ParkingPages
             {
                 Text = "3"
             });
+            layout.Children.Add(new Label
+            {
+                Text = Shell.Current?.ToString() ?? "<null>"
+            });
+            layout.Children.Add(new Label
+            {
+                Text = (App.Current.MainPage as Shell)?.ToString() ?? "<null>"
+            });
 
             Content = layout;
         }
