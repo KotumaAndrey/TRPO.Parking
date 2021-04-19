@@ -17,13 +17,12 @@ namespace TRPO.Parking.DataBase.Mappers
                 Name = client.Name,
                 Age = client.Age,
                 GenderId = client.Gender,
-                Gender = new GenderEntity(client.Gender),
+                //Gender = client.Gender is null ? null : new GenderEntity(client.Gender.Value),
                 PhoneNumber = client.PhoneNumber,
                 Email = client.Email,
                 Experience = client.Experience,
-                ClientTypeId = client.ClientType,
-                ClientType = new ClientTypeEntity(client.ClientType,
-                    ClientTypeExt.GetPrice(client.ClientType)),
+                ClientTypeId = client.ClientType.Type,
+                //ClientType = ClientTypeMapper.ToDb(client.ClientType),
                 LatePaymentMinutesLeft = client.LatePaymentMinutesLeft,
                 LatePaymentPriceMultiplier = client.LatePaymentPriceMultiplier
             };
@@ -39,7 +38,7 @@ namespace TRPO.Parking.DataBase.Mappers
                 PhoneNumber = client.PhoneNumber,
                 Email = client.Email,
                 Experience = client.Experience,
-                ClientType = client.ClientTypeId,
+                ClientType = ClientTypeMapper.ToLogic(client.ClientType),
                 LatePaymentMinutesLeft = client.LatePaymentMinutesLeft,
                 LatePaymentPriceMultiplier = client.LatePaymentPriceMultiplier
             };

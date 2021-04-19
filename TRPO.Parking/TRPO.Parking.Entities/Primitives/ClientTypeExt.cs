@@ -9,6 +9,23 @@ namespace TRPO.Parking.Entities.Primitives
     {
         private static Dictionary<ClientType, double> price = null;
 
+        public static ClientTypeEntity ToEntity(this ClientType type)
+            => new ClientTypeEntity
+            {
+                Type = type,
+                Price = type.GetPrice()
+            };
+
+        public static double GetPrice(this ClientType type)
+        {
+            if (price is null)
+            {
+                InitPrice();
+            }
+
+            return price[type];
+        }
+
         private static void InitPrice()
         {
             price = new Dictionary<ClientType, double>();
@@ -30,16 +47,6 @@ namespace TRPO.Parking.Entities.Primitives
                 var mult = double.Parse(curValue);
                 price.Add(type, mult);
             }
-        }
-
-        public static double GetPrice(this ClientType type)
-        {
-            if (price is null)
-            {
-                InitPrice();
-            }
-
-            return price[type];
         }
     }
 }

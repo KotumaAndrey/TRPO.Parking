@@ -15,7 +15,7 @@ namespace TRPO.Parking.DataBase.Mappers
                 Name = employee.Name,
                 EmployeementDate = employee.EmployeementDate,
                 Salary = employee.Salary,
-                TypeId = employee.ClientType,
+                TypeId = employee.Type,
                 Type = new EmployeeTypeEntity(employee.Type)
             };
 
@@ -26,8 +26,7 @@ namespace TRPO.Parking.DataBase.Mappers
                 Name = employee.Name,
                 EmployeementDate = employee.EmployeementDate,
                 Salary = employee.Salary,
-                ClientType = employee.TypeId,
-                Type = employee.Type.Id
+                Type = employee.TypeId
             };
     }
 }
