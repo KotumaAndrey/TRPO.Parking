@@ -49,12 +49,12 @@ namespace TRPO.Parking.Tests.Logic
 
             Assert.IsNotNull(result, "Метод вернул пустой объект.");
 
-            Assert.IsNotNull(result.String, "Метод вернул объект c пустой строкой.");
-            Assert.AreEqual(expectedString, result.String, "Метод вернул не правильную строку.");
-            Assert.AreEqual(testStrLength, result.Length, "Метод вернул струку не правильной длины.");
+            Assert.IsNotNull(result.ToString(), "Метод вернул объект c пустой строкой.");
+            Assert.AreEqual(expectedString, result.ToString(), "Метод вернул не правильную строку.");
+            Assert.AreEqual(testStrLength, result.Count(), "Метод вернул струку не правильной длины.");
 
-            Assert.IsNotNull(result.Strings, "Метод вернул null перечисление.");
-            Assert.AreEqual(0, result.Strings.Count(), "Метод вернул не пустое перечисление.");
+            Assert.IsNotNull(result.ToString(), "Метод вернул null перечисление.");
+            Assert.AreEqual(0, result.ToString().Count(), "Метод вернул не пустое перечисление.");
         }
     }
 }

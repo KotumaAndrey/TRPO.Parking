@@ -24,7 +24,7 @@ namespace TRPO.Parking.DataBase.Mappers
                 ClientTypeId = client.ClientType,
                 ClientType = new ClientTypeEntity(client.ClientType,
                     ClientTypeExt.GetPrice(client.ClientType)),
-                LatePaymentTimeLeft = client.LatePaymentTimeLeft,
+                LatePaymentMinutesLeft = client.LatePaymentMinutesLeft,
                 LatePaymentPriceMultiplier = client.LatePaymentPriceMultiplier
             };
 
@@ -40,7 +40,7 @@ namespace TRPO.Parking.DataBase.Mappers
                 Email = client.Email,
                 Experience = client.Experience,
                 ClientType = client.ClientTypeId,
-                LatePaymentTimeLeft = client.LatePaymentTimeLeft,
+                LatePaymentMinutesLeft = client.LatePaymentMinutesLeft,
                 LatePaymentPriceMultiplier = client.LatePaymentPriceMultiplier
             };
     }
