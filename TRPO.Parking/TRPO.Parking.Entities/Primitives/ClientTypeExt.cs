@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using TRPO.Parking.Utilitas;
 
 namespace TRPO.Parking.Entities.Primitives
 {
@@ -43,7 +44,8 @@ namespace TRPO.Parking.Entities.Primitives
             {
                 var name = type.ToString();
                 var curElement = elements.First(e => e.Attribute("Name").Value == name);
-                var curValue = curElement.Attribute("Price").Value;
+                var curValue = curElement.Attribute("Price").Value
+                    .ReplaceCultureRealSepataror(".");
                 var mult = double.Parse(curValue);
                 price.Add(type, mult);
             }

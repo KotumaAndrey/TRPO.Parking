@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Linq;
+using TRPO.Parking.Utilitas;
 
 namespace TRPO.Parking.Entities
 {
@@ -21,7 +22,8 @@ namespace TRPO.Parking.Entities
                 var idValue = element.Attribute("Id")?.Value;
                 var id = int.Parse(idValue);
 
-                var priceMultiplerValue = element.Attribute("PriceMultipler")?.Value;
+                var priceMultiplerValue = element.Attribute("PriceMultipler")?.Value
+                    .ReplaceCultureRealSepataror(".");
                 var priceMultipler = double.Parse(priceMultiplerValue);
 
                 var FromValue = element.Attribute("From")?.Value;
