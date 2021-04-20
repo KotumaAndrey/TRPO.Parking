@@ -12,7 +12,7 @@ namespace TRPO.Parking.MobileApp
 
             InitializeComponent();
 
-            MainPage = new AppShell(); //AuthenticationPages.LoginPage();
+            MainPage = new AuthenticationPages.LoginPage();
         }
 
         protected override void OnStart()
