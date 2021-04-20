@@ -13,11 +13,11 @@ namespace TRPO.Parking.DataBase.Mappers
             {
                 Id = parkingSpace.Id,
                 FloorId = parkingSpace.Floor.Id,
-                Floor = FloorMapper.ToDb(parkingSpace.Floor),
+                //Floor = FloorMapper.ToDb(parkingSpace.Floor),
                 Row = parkingSpace.Row,
                 Colunm = parkingSpace.Colunm,
                 StatusId = parkingSpace.Status,
-                Status = new ParkingSpaceStatusEntity(parkingSpace.Status)
+                //Status = new ParkingSpaceStatusEntity(parkingSpace.Status)
             };
 
         public static readonly Func<DB.ParkingSpace, LE.ParkingSpace> ToLogic =

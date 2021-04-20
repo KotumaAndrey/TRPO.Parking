@@ -22,7 +22,7 @@ namespace TRPO.Parking.ConsoleApp.DbTest
 
             Clear();
             var clients = GetAll();
-            if(print) Print(clients);
+            if (print) Print(clients);
             var added = Add();
             clients = GetAll();
             if (print) Print(clients);
@@ -191,18 +191,10 @@ namespace TRPO.Parking.ConsoleApp.DbTest
 
             for (int i = 0; i < c1.Length; i++)
             {
-                if (!IsEqual(c1[i], c2[i])) return false;
+                if (!TestExt.IsEqual(c1[i], c2[i])) return false;
             }
 
             return true;
-        }
-
-        static bool IsEqual(LClient c1, LClient c2)
-        {
-            return c1.Name == c1.Name
-                   && c1.PhoneNumber == c2.PhoneNumber
-                   && c1.Password == c2.Password;
-            // ... допиши остальные поля сам пж
         }
     }
 }

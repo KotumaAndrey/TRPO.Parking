@@ -11,9 +11,9 @@ namespace TRPO.Parking.DataBase.Mappers
             activeRentalParkingSpaces => new DB.ActiveRentalParkingSpaces
             {
                 ActiveRentalId = activeRentalParkingSpaces.ParkingSpace.Id,
-                ActiveRental = ActiveRentalMapper.ToDb(activeRentalParkingSpaces.ActiveRental),
+                //ActiveRental = ActiveRentalMapper.ToDb(activeRentalParkingSpaces.ActiveRental),
                 ParkingSpaceId = activeRentalParkingSpaces.ParkingSpace.Id,
-                ParkingSpace = ParkingSpaceMapper.ToDb(activeRentalParkingSpaces.ParkingSpace),
+                //ParkingSpace = ParkingSpaceMapper.ToDb(activeRentalParkingSpaces.ParkingSpace),
             };
 
         public static readonly Func<DB.ActiveRentalParkingSpaces, LE.ActiveRentalParkingSpaces> ToLogic =

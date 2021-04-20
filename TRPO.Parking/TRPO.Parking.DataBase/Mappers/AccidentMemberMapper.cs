@@ -11,9 +11,9 @@ namespace TRPO.Parking.DataBase.Mappers
             accidentMember => new DB.AccidentMember
             {
                 AccidentId = accidentMember.Accident.Id,
-                Accident = AccidentMapper.ToDb(accidentMember.Accident),
+                //Accident = AccidentMapper.ToDb(accidentMember.Accident),
                 ClientId = accidentMember.Client.Id,
-                Client = ClientMapper.ToDb(accidentMember.Client)
+                //Client = ClientMapper.ToDb(accidentMember.Client)
             };
 
         public static readonly Func<DB.AccidentMember, LE.AccidentMember> ToLogic =

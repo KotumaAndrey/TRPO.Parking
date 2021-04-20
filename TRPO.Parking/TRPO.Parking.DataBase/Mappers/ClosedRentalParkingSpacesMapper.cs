@@ -11,9 +11,9 @@ namespace TRPO.Parking.DataBase.Mappers
             closedRentalParkingSpaces => new DB.ClosedRentalParkingSpaces
             {
                 ClosedRentalId = closedRentalParkingSpaces.ClosedRental.Id,
-                ClosedRental = ClosedRentalMapper.ToDb(closedRentalParkingSpaces.ClosedRental),
+                //ClosedRental = ClosedRentalMapper.ToDb(closedRentalParkingSpaces.ClosedRental),
                 ParkingSpaceId = closedRentalParkingSpaces.ParkingSpace.Id,
-                ParkingSpace = ParkingSpaceMapper.ToDb(closedRentalParkingSpaces.ParkingSpace)
+                //ParkingSpace = ParkingSpaceMapper.ToDb(closedRentalParkingSpaces.ParkingSpace)
             };
 
         public static readonly Func<DB.ClosedRentalParkingSpaces, LE.ClosedRentalParkingSpaces> ToLogic =

@@ -13,7 +13,7 @@ namespace TRPO.Parking.DataBase.Mappers
                 Id = accident.Id,
                 AccidentDate = accident.AccidentDate,
                 CulpritClientId = accident.CulpritClient.Id,
-                CulpritClient = ClientMapper.ToDb(accident.CulpritClient),
+                //CulpritClient = ClientMapper.ToDb(accident.CulpritClient),
                 Comment = accident.Comment
             };
 

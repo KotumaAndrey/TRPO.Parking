@@ -14,7 +14,7 @@ namespace TRPO.Parking.DataBase.Mappers
                 Login = administrator.Login,
                 Password = administrator.Password,
                 EmployeeId = administrator.Employee.Id,
-                Employee = EmployeeMapper.ToDb(administrator.Employee)
+                //Employee = EmployeeMapper.ToDb(administrator.Employee)
         };
 
         public static readonly Func<DB.Administrator, LE.Administrator> ToLogic =

@@ -12,15 +12,15 @@ namespace TRPO.Parking.DataBase.Mappers
            {
                Id = latePayment.Id,
                ClientId = latePayment.Client.Id,
-               Client = ClientMapper.ToDb(latePayment.Client),
+               //Client = ClientMapper.ToDb(latePayment.Client),
                LatePaymentTypeId = latePayment.LatePaymentType.Id,
-               LatePaymentType = LatePaymentTypeMapper.ToDb(latePayment.LatePaymentType),
+               //LatePaymentType = LatePaymentTypeMapper.ToDb(latePayment.LatePaymentType),
                ParkingSpaceId = latePayment.ParkingSpace.Id,
-               ParkingSpace = ParkingSpaceMapper.ToDb(latePayment.ParkingSpace),
+               //ParkingSpace = ParkingSpaceMapper.ToDb(latePayment.ParkingSpace),
                ActiveRentalId = latePayment.ActiveRental.Id,
-               ActiveRental = ActiveRentalMapper.ToDb(latePayment.ActiveRental),
+               //ActiveRental = ActiveRentalMapper.ToDb(latePayment.ActiveRental),
                ClosedRentalId = latePayment.ClosedRental.Id,
-               ClosedRental = ClosedRentalMapper.ToDb(latePayment.ClosedRental),
+               //ClosedRental = ClosedRentalMapper.ToDb(latePayment.ClosedRental),
            };
 
         public static readonly Func<DB.LatePayment, LE.LatePayment> ToLogic =

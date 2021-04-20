@@ -12,6 +12,8 @@ namespace TRPO.Parking.ConsoleApp.DbTest
         {
             IPathfinder pathfinder = Dependencies.DependencyResolver.Container.Resolve<IPathfinder>();
             ClientTest.Test(print, pathfinder);
+
+            AccidentTest.Test(print, pathfinder);
         }
     }
 }

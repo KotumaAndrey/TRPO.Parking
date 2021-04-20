@@ -14,14 +14,14 @@ namespace TRPO.Parking.DataBase.Mappers
             {
                 Id = clientTypeUpdateRequest.Id,
                 ClientId = clientTypeUpdateRequest.Client.Id,
-                Client = ClientMapper.ToDb(clientTypeUpdateRequest.Client),
+                //Client = ClientMapper.ToDb(clientTypeUpdateRequest.Client),
                 OpenDate = clientTypeUpdateRequest.OpenDate,
                 OldClientTypeId = clientTypeUpdateRequest.OldClientType,
                 //OldClientType = new ClientTypeEntity(clientTypeUpdateRequest.OldClientType, ClientTypeExt.GetPrice(clientTypeUpdateRequest.OldClientType)),
                 NewClientTypeId = clientTypeUpdateRequest.NewClientType,
                 //NewClientType = new ClientTypeEntity(clientTypeUpdateRequest.NewClientType, ClientTypeExt.GetPrice(clientTypeUpdateRequest.NewClientType)),
                 StatusId = clientTypeUpdateRequest.Status,
-                Status = new ClientTypeUpdateRequestStatusEntity(clientTypeUpdateRequest.Status),
+                //Status = new ClientTypeUpdateRequestStatusEntity(clientTypeUpdateRequest.Status),
                 AdministratorId = clientTypeUpdateRequest.Administrator.Id,
                 //Administrator = AdministratorMapper.ToDb(clientTypeUpdateRequest.Administrator),
                 CloseDate = clientTypeUpdateRequest.CloseDate

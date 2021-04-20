@@ -12,11 +12,11 @@ namespace TRPO.Parking.DataBase.Mappers
             {
                 Id = activeRentalRenewal.Id,
                 RentalId = activeRentalRenewal.Rental.Id,
-                Rental = ActiveRentalMapper.ToDb(activeRentalRenewal.Rental),
+                //Rental = ActiveRentalMapper.ToDb(activeRentalRenewal.Rental),
                 OldEndDate = activeRentalRenewal.Rental.ExpectedCloseDate,
                 NewEndDate = activeRentalRenewal.NewEndDate,
                 TypeId = activeRentalRenewal.Type.Id,
-                Type = RentalRenewalTypeMapper.ToDb(activeRentalRenewal.Type)
+                //Type = RentalRenewalTypeMapper.ToDb(activeRentalRenewal.Type)
             };
 
         public static readonly Func<DB.ActiveRentalRenewal, LE.ActiveRentalRenewal> ToLogic =

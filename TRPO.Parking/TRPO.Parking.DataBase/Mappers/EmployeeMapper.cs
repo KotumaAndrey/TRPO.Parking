@@ -16,7 +16,7 @@ namespace TRPO.Parking.DataBase.Mappers
                 EmployeementDate = employee.EmployeementDate,
                 Salary = employee.Salary,
                 TypeId = employee.Type,
-                Type = new EmployeeTypeEntity(employee.Type)
+                //Type = new EmployeeTypeEntity(employee.Type)
             };
 
         public static readonly Func<DB.Employee, LE.Employee> ToLogic =

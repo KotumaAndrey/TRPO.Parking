@@ -12,9 +12,9 @@ namespace TRPO.Parking.DataBase.Mappers
             {
                 Id = closedRental.Id,
                 ClientId = closedRental.Client.Id,
-                Client = ClientMapper.ToDb(closedRental.Client),
+                //Client = ClientMapper.ToDb(closedRental.Client),
                 ParkingSpaceId = closedRental.ParkingSpace.Id,
-                ParkingSpace = ParkingSpaceMapper.ToDb(closedRental.ParkingSpace),
+                //ParkingSpace = ParkingSpaceMapper.ToDb(closedRental.ParkingSpace),
                 OpenDate = closedRental.OpenDate,
                 ExpectedCloseDate = closedRental.ExpectedCloseDate,
                 RealCloseDate = closedRental.RealCloseDate,
