@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TRPO.Parking.Utilitas\TRPO.Parking.Utilitas.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Configs\DefaultValuesConfig.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

@@ -1,0 +1,5 @@
+﻿<LatePaymentTypeConfig>
+  <LatePaymentType Id="1" PriceMultipler="2" From="0" To="5" />
+  <LatePaymentType Id="2" PriceMultipler="3" From="6" To="20" />
+  <LatePaymentType Id="3" PriceMultipler="5" From="21" />
+</LatePaymentTypeConfig>

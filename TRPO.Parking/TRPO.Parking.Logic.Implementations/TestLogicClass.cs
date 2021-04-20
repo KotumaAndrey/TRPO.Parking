@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using TRPO.Parking.Entities;
 using TRPO.Parking.Logic.Interfaces;
 using TRPO.Parking.Repositories.Interfaces;
 
@@ -18,52 +15,32 @@ namespace TRPO.Parking.Logic.Implementations
             _testRepo = testRepo;
         }
 
-        public async Task<TestEntity> GetTestValue()
+        public async Task<IEnumerable<string>> GetTestValue()
         {
             var t = await _testRepo.GetTestValue();
-
-            var entity = new TestEntity
-            {
-                Strings = t
-            };
-
-            return entity;
+            return t;
         }
 
-        public async Task<TestEntity> GetClientTypes()
+        public async Task<IEnumerable<string>> GetClientTypes()
         {
             var t = await _testRepo.GetClientTypes();
-
-            var entity = new TestEntity
-            {
-                Strings = t
-            };
-
-            return entity;
+            return t;
         }
 
-        public async Task<TestEntity> GetGenders()
+        public async Task<IEnumerable<string>> GetGenders()
         {
             var t = await _testRepo.GetGenders();
-
-            var entity = new TestEntity
-            {
-                Strings = t
-            };
-
-            return entity;
+            var res = t.Select(x => x.ToString()).ToArray();
+            return res;
         }
 
-        public async Task<TestEntity> GetRentalRenewalTypes()
+        public async Task<IEnumerable<string>> GetRentalRenewalTypes()
         {
             var t = await _testRepo.GetRentalRenewalTypes();
-
-            var entity = new TestEntity
-            {
-                Strings = t
-            };
-
-            return entity;
+            var res = t
+                .Select(x => $"{x.Id} - ({x.PriceMultiplier}) - {x.From} : {x.To}")
+                .ToArray();
+            return res;
         }
     }
 }

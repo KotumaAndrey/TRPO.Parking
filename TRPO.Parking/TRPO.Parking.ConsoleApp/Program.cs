@@ -1,47 +1,28 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Autofac;
-using Microsoft.EntityFrameworkCore;
+using TRPO.Parking.ConsoleApp.DbTest;
 using TRPO.Parking.DataBase;
-using TRPO.Parking.Dependencies;
+using TRPO.Parking.DataBase.Mappers;
 using TRPO.Parking.Entities;
-using TRPO.Parking.Logic.Interfaces;
+using TRPO.Parking.Entities.Primitives;
+using TRPO.Parking.Utilitas.Pathfinder;
 
 namespace TRPO.Parking.ConsoleApp
 {
     class Program
     {
+        static IPathfinder pathfinder = Dependencies.DependencyResolver.Container.Resolve<IPathfinder>();
         static void Main(string[] args)
         {
-            var logic = DependencyResolver.Container.Resolve<ITestLogicInterface>();
-
-            var entity = logic.GetTestValue().Result;
-            Print(entity);
-
-            entity = logic.GetGenders().Result;
-            Print(entity);
-
-            entity = logic.GetClientTypes().Result;
-            Print(entity);
-
-            entity = logic.GetRentalRenewalTypes().Result;
-            Print(entity);
+            FullTest.Test();
 
             // --- --- ---
             Console.WriteLine("\nend");
             Console.ReadKey();
         }
 
-        static void Print(TestEntity entity)
-        {
-            foreach (var s in entity.Strings)
-            {
-                Console.WriteLine(s);
-            }
-            Console.WriteLine();
-        }
+        
     }
 }

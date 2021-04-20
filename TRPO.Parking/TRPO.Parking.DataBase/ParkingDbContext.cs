@@ -51,14 +51,7 @@ namespace TRPO.Parking.DataBase
         {
             RentalRenewalTypes.AddOrUpdateOuterValues(
                 LE.RentalRenewalType.DefaultValues,
-                value => new RentalRenewalType
-                {
-                    Id = value.Id,
-                    Title = value.Title,
-                    PriceMultiplier = value.PriceMultiplier,
-                    From = value.From,
-                    To = value.To
-                });
+                Mappers.RentalRenewalTypeMapper.ToDb);
 
             SaveChanges();
         }

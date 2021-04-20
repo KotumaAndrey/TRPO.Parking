@@ -13,7 +13,7 @@ namespace TRPO.Parking.DataBase.Entities
         public DateTime EmployeementDate { get; set; }
         public int Salary { get; set; }
 
-        public ClientType TypeId { get; set; }
+        public EmployeeType TypeId { get; set; }
         public virtual EmployeeTypeEntity Type { get; set; }
     }
 }

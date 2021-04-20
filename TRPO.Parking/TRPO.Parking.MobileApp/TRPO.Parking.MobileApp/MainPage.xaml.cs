@@ -1,7 +1,6 @@
 ﻿using Autofac;
-using System.Linq;
+using System.Collections.Generic;
 using TRPO.Parking.Dependencies;
-using TRPO.Parking.Entities;
 using TRPO.Parking.Logic.Interfaces;
 using Xamarin.Forms;
 
@@ -36,14 +35,14 @@ namespace TRPO.Parking.MobileApp
             Content = layout;
         }
 
-        private StackLayout RenderEntity(TestEntity entity)
+        private StackLayout RenderEntity(IEnumerable<string> entity)
         {
             var layout = new StackLayout
             {
                 Margin = new Thickness(10)
             };
 
-            foreach (var s in entity.Strings)
+            foreach (var s in entity)
             {
                 Label label = new Label
                 {
