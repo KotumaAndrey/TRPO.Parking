@@ -1,6 +1,5 @@
 ﻿using System;
-using TRPO.Parking.DataBase.EnumEntities;
-using TRPO.Parking.Entities.Primitives;
+using TRPO.Parking.DataBase.Mappers.Utilities;
 
 using DB = TRPO.Parking.DataBase.Entities;
 using LE = TRPO.Parking.Entities;
@@ -31,12 +30,14 @@ namespace TRPO.Parking.DataBase.Mappers
             clientTypeUpdateRequest => new LE.ClientTypeUpdateRequest
             {
                 Id = clientTypeUpdateRequest.Id,
-                Client = ClientMapper.ToLogic(clientTypeUpdateRequest.Client),
+                Client = ClientMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.Client, DB.Client>
+                    (clientTypeUpdateRequest.ClientId)),
                 OpenDate = clientTypeUpdateRequest.OpenDate,
                 OldClientType = clientTypeUpdateRequest.OldClientTypeId,
                 NewClientType = clientTypeUpdateRequest.NewClientTypeId,
                 Status = clientTypeUpdateRequest.StatusId,
-                Administrator = AdministratorMapper.ToLogic(clientTypeUpdateRequest.Administrator),
+                Administrator = AdministratorMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.Administrator, DB.Administrator>
+                    ((int)clientTypeUpdateRequest.AdministratorId)),
                 CloseDate = clientTypeUpdateRequest.CloseDate
             };
     }

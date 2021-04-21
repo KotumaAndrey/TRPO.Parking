@@ -16,7 +16,9 @@ namespace TRPO.Parking.ConsoleApp.DbTest
         public static void Test(bool print, IPathfinder pathfinder)
         {
             _pathfinder = pathfinder;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Accident:");
+            Console.ForegroundColor = ConsoleColor.Gray;
 
             Clear();
             var accidents = GetAll();
@@ -24,7 +26,12 @@ namespace TRPO.Parking.ConsoleApp.DbTest
             var added = Add();
             accidents = GetAll();
             if (print) Print(accidents);
-            Console.WriteLine($"- {IsEqual(added.ToArray(), accidents.ToArray())}");
+
+            var equals = IsEqual(added.ToArray(), accidents.ToArray());
+
+            if (equals) { Console.ForegroundColor = ConsoleColor.Green; }
+            else { Console.ForegroundColor = ConsoleColor.Red; }
+            Console.WriteLine($"- {equals}");
             Console.WriteLine();
         }
 
@@ -122,13 +129,13 @@ namespace TRPO.Parking.ConsoleApp.DbTest
             Console.WriteLine();
         }
 
-        static bool IsEqual(LAccident[] a1, LAccident[] a2)
+        static bool IsEqual(LAccident[] e1, LAccident[] e2)
         {
-            if (a1.Length != a2.Length) return false;
+            if (e1.Length != e2.Length) return false;
 
-            for (int i = 0; i < a1.Length; i++)
+            for (int i = 0; i < e1.Length; i++)
             {
-                if (!TestExt.IsEqual(a1[i], a2[i])) return false;
+                if (!TestExt.IsEqual(e1[i], e2[i])) return false;
             }
 
             return true;

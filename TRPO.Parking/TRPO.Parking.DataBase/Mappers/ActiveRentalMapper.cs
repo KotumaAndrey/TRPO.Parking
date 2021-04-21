@@ -25,7 +25,7 @@ namespace TRPO.Parking.DataBase.Mappers
                 Id = activeRental.Id,
                 Client = ClientMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.Client, DB.Client>
                     (activeRental.ClientId)),
-                ParkingSpace = ParkingSpaceMapper.ToLogic(GetEntityFromDb.GetWithIntId < LE.ParkingSpace, DB.ParkingSpace >
+                ParkingSpace = ParkingSpaceMapper.ToLogic(GetEntityFromDb.GetWithIntId <LE.ParkingSpace, DB.ParkingSpace>
                     (activeRental.ParkingSpaceId)),
                 OpenDate = activeRental.OpenDate,
                 ExpectedCloseDate = activeRental.ExpectedCloseDate

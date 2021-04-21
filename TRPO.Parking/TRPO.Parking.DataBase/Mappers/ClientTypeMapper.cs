@@ -11,7 +11,8 @@ namespace TRPO.Parking.DataBase.Mappers
             clientType => new DB.ClientTypeEntity
             {
                 Id = clientType.Type,
-                Price = clientType.Price
+                Price = clientType.Price,
+                Title = clientType.Type.ToString()
             };
 
         public static readonly Func<DB.ClientTypeEntity, LE.ClientTypeEntity> ToLogic =

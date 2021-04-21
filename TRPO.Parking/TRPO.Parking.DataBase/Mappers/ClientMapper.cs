@@ -1,10 +1,9 @@
 ﻿using System;
-using TRPO.Parking.DataBase.EnumEntities;
 using TRPO.Parking.DataBase.Mappers.Utilities;
 using TRPO.Parking.Entities.Primitives;
 
 using DB = TRPO.Parking.DataBase.Entities;
-using DBEE = TRPO.Parking.DataBase.EnumEntities;
+using EE = TRPO.Parking.DataBase.EnumEntities;
 using LE = TRPO.Parking.Entities;
 
 namespace TRPO.Parking.DataBase.Mappers
@@ -40,8 +39,8 @@ namespace TRPO.Parking.DataBase.Mappers
                 PhoneNumber = client.PhoneNumber,
                 Email = client.Email,
                 Experience = client.Experience,
-                ClientType = ClientTypeMapper.ToLogic(GetEntityFromDb.GetWithEnum<LE.ClientTypeEntity, DBEE.ClientTypeEntity, ClientType>(client.ClientTypeId)),
-                //client.ClientType is null ? null : ClientTypeMapper.ToLogic(client.ClientType),
+                ClientType = ClientTypeMapper.ToLogic(GetEntityFromDb.GetWithEnum<LE.ClientTypeEntity, EE.ClientTypeEntity, ClientType>
+                    (client.ClientTypeId)),
                 LatePaymentMinutesLeft = client.LatePaymentMinutesLeft,
                 LatePaymentPriceMultiplier = client.LatePaymentPriceMultiplier
             };

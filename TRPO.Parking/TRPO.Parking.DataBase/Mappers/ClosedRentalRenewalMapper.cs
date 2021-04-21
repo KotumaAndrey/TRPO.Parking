@@ -1,4 +1,5 @@
 ﻿using System;
+using TRPO.Parking.DataBase.Mappers.Utilities;
 
 using DB = TRPO.Parking.DataBase.Entities;
 using LE = TRPO.Parking.Entities;
@@ -23,10 +24,12 @@ namespace TRPO.Parking.DataBase.Mappers
             closedRentalRenewal => new LE.ClosedRentalRenewal
             {
                 Id = closedRentalRenewal.Id,
-                Rental = ClosedRentalMapper.ToLogic(closedRentalRenewal.Rental),
+                Rental = ClosedRentalMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.ClosedRental, DB.ClosedRental>
+                    (closedRentalRenewal.RentalId)),
                 OldEndDate = closedRentalRenewal.OldEndDate,
                 NewEndDate = closedRentalRenewal.NewEndDate,
-                Type = RentalRenewalTypeMapper.ToLogic(closedRentalRenewal.Type)
+                Type = RentalRenewalTypeMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.RentalRenewalType, DB.RentalRenewalType>
+                    (closedRentalRenewal.TypeId))
             };
     }
 }

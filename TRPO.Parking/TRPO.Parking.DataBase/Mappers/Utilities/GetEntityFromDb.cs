@@ -15,13 +15,14 @@ namespace TRPO.Parking.DataBase.Mappers.Utilities
             where LE : class
             where DB : class, IEntityWithIntId
         {
-            var db = new ParkingDbContext(Pathfinder);
+            using(var db = new ParkingDbContext(Pathfinder))
+            {
+                var typeName = typeof(LE).Name + "s";
+                var property = db.GetType().GetProperty(typeName);
+                var values = (EF.InternalDbSet<DB>)property.GetValue(db);
 
-            var typeName = typeof(LE).Name + "s";
-            var property = db.GetType().GetProperty(typeName);
-            var values = (EF.InternalDbSet<DB>)property.GetValue(db);
-
-            return values.FirstOrDefault(e => e.Id == entityId);
+                return values.FirstOrDefault(e => e.Id == entityId);
+            }
         }
 
         public static DB GetWithEnum<LE, DB, EE>(Enum entityId)
@@ -29,22 +30,24 @@ namespace TRPO.Parking.DataBase.Mappers.Utilities
             where DB : BaseEnumEntity<EE>
             where EE : Enum
         {
-            var db = new ParkingDbContext(Pathfinder);
-
-            var typeName = typeof(LE).Name.TrimEnd('y') + "ies";
-            var property = db.GetType().GetProperty(typeName);
-            var values = (EF.InternalDbSet<DB>)property.GetValue(db);
-
-            DB entity = null;
-            foreach (var v  in values)
+            using (var db = new ParkingDbContext(Pathfinder))
             {
-                if (v.Id.Equals(entityId))
-                {
-                    entity = v;
-                }
-            }
 
-            return entity;
+                var typeName = typeof(LE).Name.TrimEnd('y') + "ies";
+                var property = db.GetType().GetProperty(typeName);
+                var values = (EF.InternalDbSet<DB>)property.GetValue(db);
+
+                DB entity = null;
+                foreach (var v in values)
+                {
+                    if (v.Id.Equals(entityId))
+                    {
+                        entity = v;
+                    }
+                }
+
+                return entity;
+            }
         }
     }
 }

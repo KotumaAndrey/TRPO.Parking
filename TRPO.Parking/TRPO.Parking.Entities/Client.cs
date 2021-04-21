@@ -1,4 +1,4 @@
-﻿ using TRPO.Parking.Entities.Primitives;
+﻿using TRPO.Parking.Entities.Primitives;
 
 namespace TRPO.Parking.Entities
 {

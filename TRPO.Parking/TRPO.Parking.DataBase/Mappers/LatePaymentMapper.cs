@@ -1,5 +1,5 @@
 ﻿using System;
-
+using TRPO.Parking.DataBase.Mappers.Utilities;
 using DB = TRPO.Parking.DataBase.Entities;
 using LE = TRPO.Parking.Entities;
 
@@ -27,11 +27,16 @@ namespace TRPO.Parking.DataBase.Mappers
             latePayment => new LE.LatePayment
             {
                 Id = latePayment.Id,
-                Client = ClientMapper.ToLogic(latePayment.Client),
-                LatePaymentType = LatePaymentTypeMapper.ToLogic(latePayment.LatePaymentType),
-                ParkingSpace = ParkingSpaceMapper.ToLogic(latePayment.ParkingSpace),
-                ActiveRental = ActiveRentalMapper.ToLogic(latePayment.ActiveRental),
-                ClosedRental = ClosedRentalMapper.ToLogic(latePayment.ClosedRental),
+                Client = ClientMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.Client, DB.Client>(
+                    latePayment.ClientId)),
+                LatePaymentType = LatePaymentTypeMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.LatePaymentType, DB.LatePaymentType>(
+                    latePayment.LatePaymentTypeId)),
+                ParkingSpace = ParkingSpaceMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.ParkingSpace, DB.ParkingSpace>
+                    (latePayment.ParkingSpaceId)),
+                ActiveRental = ActiveRentalMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.ActiveRental, DB.ActiveRental>
+                    ((int)latePayment.ActiveRentalId)),
+                ClosedRental = ClosedRentalMapper.ToLogic(GetEntityFromDb.GetWithIntId <LE.ClosedRental, DB.ClosedRental>
+                    ((int)latePayment.ClosedRentalId)),
             };
     }
 }

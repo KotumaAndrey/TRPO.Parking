@@ -1,5 +1,5 @@
 ﻿using System;
-
+using TRPO.Parking.DataBase.Mappers.Utilities;
 using DB = TRPO.Parking.DataBase.Entities;
 using LE = TRPO.Parking.Entities;
 
@@ -19,8 +19,10 @@ namespace TRPO.Parking.DataBase.Mappers
         public static readonly Func<DB.ClosedRentalParkingSpaces, LE.ClosedRentalParkingSpaces> ToLogic =
             closedRentalParkingSpaces => new LE.ClosedRentalParkingSpaces
             {
-                ClosedRental = ClosedRentalMapper.ToLogic(closedRentalParkingSpaces.ClosedRental),
-                ParkingSpace = ParkingSpaceMapper.ToLogic(closedRentalParkingSpaces.ParkingSpace)
+                ClosedRental = ClosedRentalMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.ClosedRental, DB.ClosedRental>(
+                    closedRentalParkingSpaces.ClosedRentalId)),
+                ParkingSpace = ParkingSpaceMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.ParkingSpace, DB.ParkingSpace>
+                    (closedRentalParkingSpaces.ParkingSpaceId)),
             };
     }
 }

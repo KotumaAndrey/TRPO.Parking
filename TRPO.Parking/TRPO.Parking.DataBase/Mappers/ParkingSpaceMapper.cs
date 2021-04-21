@@ -1,6 +1,6 @@
 ﻿using System;
-using TRPO.Parking.DataBase.EnumEntities;
 
+using TRPO.Parking.DataBase.Mappers.Utilities;
 using DB = TRPO.Parking.DataBase.Entities;
 using LE = TRPO.Parking.Entities;
 
@@ -24,7 +24,8 @@ namespace TRPO.Parking.DataBase.Mappers
             parkingSpace => new LE.ParkingSpace
             {
                 Id = parkingSpace.Id,
-                Floor = FloorMapper.ToLogic(parkingSpace.Floor),
+                Floor = FloorMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.Floor, DB.Floor>
+                    (parkingSpace.FloorId)),
                 Row = parkingSpace.Row,
                 Colunm = parkingSpace.Colunm,
                 Status = parkingSpace.StatusId

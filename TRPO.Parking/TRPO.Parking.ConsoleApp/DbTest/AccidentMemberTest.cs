@@ -19,7 +19,9 @@ namespace TRPO.Parking.ConsoleApp.DbTest
         public static void Test(bool print, IPathfinder pathfinder)
         {
             _pathfinder = pathfinder;
-            Console.WriteLine("Accident:");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("AccidentMember:");
+            Console.ForegroundColor = ConsoleColor.Gray;
 
             Clear();
             var accidentMembers = GetAll();
@@ -27,7 +29,12 @@ namespace TRPO.Parking.ConsoleApp.DbTest
             var added = Add();
             accidentMembers = GetAll();
             if (print) Print(accidentMembers);
-            Console.WriteLine($"- {IsEqual(added.ToArray(), accidentMembers.ToArray())}");
+
+            var equals = IsEqual(added.ToArray(), accidentMembers.ToArray());
+
+            if (equals) { Console.ForegroundColor = ConsoleColor.Green; }
+            else { Console.ForegroundColor = ConsoleColor.Red; }
+            Console.WriteLine($"- {equals}");
             Console.WriteLine();
         }
 
@@ -54,7 +61,7 @@ namespace TRPO.Parking.ConsoleApp.DbTest
 
         static IEnumerable<LAccidentMember> Add()
         {
-            var accidentMembers = GetLogicAccidents().ToArray();
+            var accidentMembers = GetLogicAccidentMembers().ToArray();
             using (var db = new ParkingDbContext(_pathfinder))
             {
                 foreach (var logicAccidentMember in accidentMembers)
@@ -69,7 +76,7 @@ namespace TRPO.Parking.ConsoleApp.DbTest
             return accidentMembers;
         }
 
-        static IEnumerable<LAccidentMember> GetLogicAccidents()
+        static IEnumerable<LAccidentMember> GetLogicAccidentMembers()
         {
             using (var db = new ParkingDbContext(_pathfinder))
             {
@@ -112,13 +119,13 @@ namespace TRPO.Parking.ConsoleApp.DbTest
             Console.WriteLine();
         }
 
-        static bool IsEqual(LAccidentMember[] a1, LAccidentMember[] a2)
+        static bool IsEqual(LAccidentMember[] e1, LAccidentMember[] e2)
         {
-            if (a1.Length != a2.Length) return false;
+            if (e1.Length != e2.Length) return false;
 
-            for (int i = 0; i < a1.Length; i++)
+            for (int i = 0; i < e1.Length; i++)
             {
-                if (!TestExt.IsEqual(a1[i], a2[i])) return false;
+                if (!TestExt.IsEqual(e1[i], e2[i])) return false;
             }
 
             return true;
