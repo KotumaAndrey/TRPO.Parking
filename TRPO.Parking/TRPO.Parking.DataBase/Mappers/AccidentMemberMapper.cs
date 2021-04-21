@@ -1,5 +1,5 @@
 ﻿using System;
-
+using TRPO.Parking.DataBase.Mappers.Utilities;
 using DB = TRPO.Parking.DataBase.Entities;
 using LE = TRPO.Parking.Entities;
 
@@ -19,8 +19,10 @@ namespace TRPO.Parking.DataBase.Mappers
         public static readonly Func<DB.AccidentMember, LE.AccidentMember> ToLogic =
             accidentMember => new LE.AccidentMember
             {
-                Accident = AccidentMapper.ToLogic(accidentMember.Accident),
-                Client = ClientMapper.ToLogic(accidentMember.Client),
+                Accident = AccidentMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.Accident, DB.Accident>
+                    (accidentMember.AccidentId)),
+                Client = ClientMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.Client, DB.Client>
+                    (accidentMember.ClientId)),
             };
     }
 }

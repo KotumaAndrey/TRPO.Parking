@@ -1,5 +1,5 @@
 ﻿using System;
-
+using TRPO.Parking.DataBase.Mappers.Utilities;
 using DB = TRPO.Parking.DataBase.Entities;
 using LE = TRPO.Parking.Entities;
 
@@ -23,7 +23,8 @@ namespace TRPO.Parking.DataBase.Mappers
                 Id = administrator.Id,
                 Login = administrator.Login,
                 Password = administrator.Password,
-                Employee = EmployeeMapper.ToLogic(administrator.Employee)
+                Employee = EmployeeMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.Employee, DB.Employee>
+                    (administrator.EmployeeId))
             };
     }
 }

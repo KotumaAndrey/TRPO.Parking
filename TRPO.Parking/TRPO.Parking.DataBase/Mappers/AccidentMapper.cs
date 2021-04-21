@@ -1,4 +1,6 @@
 ﻿using System;
+using TRPO.Parking.DataBase.Mappers.Utilities;
+using TRPO.Parking.Utilitas.Pathfinder;
 
 using DB = TRPO.Parking.DataBase.Entities;
 using LE = TRPO.Parking.Entities;
@@ -22,7 +24,9 @@ namespace TRPO.Parking.DataBase.Mappers
             {
                 Id = accident.Id,
                 AccidentDate = accident.AccidentDate,
-                CulpritClient = ClientMapper.ToLogic(accident.CulpritClient),
+                CulpritClient = ClientMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.Client, DB.Client>
+                    (accident.CulpritClientId)),
+                //ClientMapper.ToLogic(accident.CulpritClient),
                 Comment = accident.Comment
             };
     }

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Autofac;
+﻿using Autofac;
+using TRPO.Parking.DataBase.Mappers.Utilities;
 using TRPO.Parking.Utilitas.Pathfinder;
 
 namespace TRPO.Parking.ConsoleApp.DbTest
@@ -11,9 +9,13 @@ namespace TRPO.Parking.ConsoleApp.DbTest
         public static void Test(bool print = false)
         {
             IPathfinder pathfinder = Dependencies.DependencyResolver.Container.Resolve<IPathfinder>();
-            ClientTest.Test(print, pathfinder);
+            GetEntityFromDb.Pathfinder = pathfinder;
 
+            ClientTest.Test(print, pathfinder);
             AccidentTest.Test(print, pathfinder);
+
+            AccidentMemberTest.Test(print, pathfinder);
+
         }
     }
 }

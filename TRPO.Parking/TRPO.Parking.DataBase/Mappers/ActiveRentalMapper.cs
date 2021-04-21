@@ -1,5 +1,5 @@
 ﻿using System;
-
+using TRPO.Parking.DataBase.Mappers.Utilities;
 using DB = TRPO.Parking.DataBase.Entities;
 using LE = TRPO.Parking.Entities;
 
@@ -23,8 +23,10 @@ namespace TRPO.Parking.DataBase.Mappers
             activeRental => new LE.ActiveRental
             {
                 Id = activeRental.Id,
-                Client = ClientMapper.ToLogic(activeRental.Client),
-                ParkingSpace = ParkingSpaceMapper.ToLogic(activeRental.ParkingSpace),
+                Client = ClientMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.Client, DB.Client>
+                    (activeRental.ClientId)),
+                ParkingSpace = ParkingSpaceMapper.ToLogic(GetEntityFromDb.GetWithIntId < LE.ParkingSpace, DB.ParkingSpace >
+                    (activeRental.ParkingSpaceId)),
                 OpenDate = activeRental.OpenDate,
                 ExpectedCloseDate = activeRental.ExpectedCloseDate
             };

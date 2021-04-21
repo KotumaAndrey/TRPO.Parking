@@ -1,5 +1,5 @@
 ﻿using System;
-
+using TRPO.Parking.DataBase.Mappers.Utilities;
 using DB = TRPO.Parking.DataBase.Entities;
 using LE = TRPO.Parking.Entities;
 
@@ -23,9 +23,11 @@ namespace TRPO.Parking.DataBase.Mappers
             activeRentalRenewal => new LE.ActiveRentalRenewal
             {
                 Id = activeRentalRenewal.Id,
-                Rental = ActiveRentalMapper.ToLogic(activeRentalRenewal.Rental),
+                Rental = ActiveRentalMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.ActiveRental, DB.ActiveRental>
+                    (activeRentalRenewal.RentalId)),
                 NewEndDate = activeRentalRenewal.NewEndDate,
-                Type = RentalRenewalTypeMapper.ToLogic(activeRentalRenewal.Type)
+                Type = RentalRenewalTypeMapper.ToLogic(GetEntityFromDb.GetWithIntId<LE.RentalRenewalType, DB.RentalRenewalType>
+                    (activeRentalRenewal.TypeId))
             };
     }
 }

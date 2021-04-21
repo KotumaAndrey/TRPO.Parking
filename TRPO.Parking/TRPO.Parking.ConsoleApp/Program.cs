@@ -16,7 +16,7 @@ namespace TRPO.Parking.ConsoleApp
         static IPathfinder pathfinder = Dependencies.DependencyResolver.Container.Resolve<IPathfinder>();
         static void Main(string[] args)
         {
-            FullTest.Test();
+            FullTest.Test(true);
 
             // --- --- ---
             Console.WriteLine("\nend");

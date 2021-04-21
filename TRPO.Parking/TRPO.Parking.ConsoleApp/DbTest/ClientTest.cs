@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TRPO.Parking.DataBase;
 using TRPO.Parking.DataBase.Mappers;
 using TRPO.Parking.Entities.Primitives;
 using TRPO.Parking.Utilitas.Pathfinder;
 
 using LClient = TRPO.Parking.Entities.Client;
-using DbClient = TRPO.Parking.DataBase.Entities.Client;
 
 namespace TRPO.Parking.ConsoleApp.DbTest
 {
@@ -27,6 +25,7 @@ namespace TRPO.Parking.ConsoleApp.DbTest
             clients = GetAll();
             if (print) Print(clients);
             Console.WriteLine($"- {IsEqual(added.ToArray(), clients.ToArray())}");
+            Console.WriteLine();
         }
 
         static void Clear()

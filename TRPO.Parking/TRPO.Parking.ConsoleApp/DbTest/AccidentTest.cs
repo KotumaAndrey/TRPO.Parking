@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using TRPO.Parking.Utilitas.Pathfinder;
 using System.Linq;
 using TRPO.Parking.DataBase;
 using TRPO.Parking.DataBase.Mappers;
+using Microsoft.EntityFrameworkCore;
 
 using LAccident = TRPO.Parking.Entities.Accident;
-using LClient = TRPO.Parking.Entities.Client;
 
 namespace TRPO.Parking.ConsoleApp.DbTest
 {
@@ -23,9 +22,10 @@ namespace TRPO.Parking.ConsoleApp.DbTest
             var accidents = GetAll();
             if (print) Print(accidents);
             var added = Add();
-            //accidents = GetAll();
-            //if (print) Print(accidents);
-            //Console.WriteLine($"- {IsEqual(added.ToArray(), accidents.ToArray())}");
+            accidents = GetAll();
+            if (print) Print(accidents);
+            Console.WriteLine($"- {IsEqual(added.ToArray(), accidents.ToArray())}");
+            Console.WriteLine();
         }
 
         static void Clear()
@@ -68,51 +68,30 @@ namespace TRPO.Parking.ConsoleApp.DbTest
 
         static IEnumerable<LAccident> GetLogicAccidents()
         {
-            int cnt = 1;
-
-            List<LAccident> logicAccidents = new List<LAccident>();
             using (var db = new ParkingDbContext(_pathfinder))
             {
-                logicAccidents.Add(new LAccident
+                yield return new LAccident
                 {
                     AccidentDate = DateTime.Now,
-                    CulpritClient = ClientMapper.ToLogic(db.Clients.FirstOrDefault()),
-                Comment = "Test accident #1.",
-                });
+                    CulpritClient = ClientMapper.ToLogic(db.Clients.AsNoTracking().FirstOrDefault()),
+                    Comment = "Test accident #1.",
+                };
+
+                yield return new LAccident
+                {
+                    AccidentDate = new DateTime(2021, 1, 20),
+                    CulpritClient = ClientMapper.ToLogic(db.Clients.AsNoTracking().ToList().ElementAt(3)),
+                    Comment = "Test accident #2."
+                };
+
+                yield return new LAccident
+                {
+                    AccidentDate = new DateTime(2021, 3, 14),
+                    CulpritClient = ClientMapper.ToLogic(db.Clients.AsNoTracking().OrderBy(c => c.Id).LastOrDefault()),
+                    Comment = "Test accident #3."
+
+                };
             }
-
-            //cnt++;
-            //yield return new LAccident
-            //{
-            //    AccidentDate = DateTime.Now,
-            //    CulpritClient = new LClient
-            //    {
-            //        Name = cnt.ToString(),
-            //        PhoneNumber = cnt.ToString(),
-            //        Password = cnt.ToString(),
-            //        LatePaymentMinutesLeft = 1,
-            //        LatePaymentPriceMultiplier = 7777,
-            //    },
-            //    Comment = "Test accident #1.",
-            //};
-
-            //yield return new LAccident
-            //{
-            //    AccidentDate = new DateTime(2021, 1, 20),
-            //    CulpritClient = ClientTest.GetAll().ElementAt(3),
-            //    Comment = "Test accident #2."
-            //};
-
-            //cnt++;
-            //yield return new LAccident
-            //{
-            //    AccidentDate = new DateTime(2021, 3, 14),
-            //    CulpritClient = ClientTest.GetAll().LastOrDefault(),
-            //    Comment = "Test accident #3."
-
-            //};
-
-            return logicAccidents;
         }
 
         static void Print(IEnumerable<LAccident> accidents)
@@ -134,7 +113,7 @@ namespace TRPO.Parking.ConsoleApp.DbTest
 
         static void Print(LAccident accident)
         {
-            Console.WriteLine($"{accident.Id}");
+            Console.WriteLine($"{accident.Id})");
 
             Console.WriteLine($" - AccidentDate: {accident.AccidentDate}");
             Console.WriteLine($" - CulpritClient.Id: {accident.CulpritClient.Id}");
